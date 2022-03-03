@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+#Nav-Bar {
+    background-color: rgb(118, 178, 255);
+    list-style: none;
+    overflow: hidden;
+}
+
+#Nav-Bar li {
+    float: left;
+}
+
+#Nav-Bar li a {
+    display: block;
+
+    font-size: 30px;
+    color: rgb(54, 54, 54);
+    text-decoration: none;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#Nav-Bar li a:hover {
+    background-color: rgb(88, 160, 255);
+}
+
+#Profile-Button button{
+    position: absolute;
+    right: 0;
+
+    background-color: rgb(97, 164, 252);
+
+    font-size: 30px;
+    color: rgb(54, 54, 54);
+    text-decoration: none;
+
+    padding-top: 8px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border-style: none;
+}
+
+#Profile-Button button:hover{
+    background-color: rgb(33, 93, 172);
+}
+
+.active {
+    background-color: rgb(56, 142, 255);
+}
