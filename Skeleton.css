@@ -3,8 +3,28 @@ body{
     padding: 0;
 }
 
+/* Style the page header and its content */
+#Page-Header {
+    background-color: rgb(217, 249, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#Page-Header a{
+    margin: 0;
+
+    text-decoration: none;
+    font-size: 50px;
+    color: rgb(54, 54, 54);
+}
+
 #Nav-Bar {
     background-color: rgb(118, 178, 255);
+
+    margin-top: 0;
+    margin-bottom: 0;
+
     list-style: none;
     overflow: hidden;
 }
@@ -13,6 +33,7 @@ body{
     float: left;
 }
 
+/*Style the nav-bar and its elements*/
 #Nav-Bar li a {
     display: block;
 
@@ -30,7 +51,7 @@ body{
     background-color: rgb(88, 160, 255);
 }
 
-#Profile-Button button{
+#Profile-Button a{
     position: absolute;
     right: 0;
 
@@ -48,7 +69,7 @@ body{
     border-style: none;
 }
 
-#Profile-Button button:hover{
+#Profile-Button a:hover{
     background-color: rgb(33, 93, 172);
 }
 
