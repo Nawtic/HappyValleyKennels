@@ -1,0 +1,92 @@
+body{
+    margin: 0;
+    padding: 0;
+
+    background-color: rgb(243, 250, 252);
+}
+
+/* Style the page header and its content */
+#Page-Header {
+    background-color: rgb(217, 249, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#Page-Header a{
+    margin: 0;
+
+    text-decoration: none;
+    font-size: 50px;
+    color: rgb(54, 54, 54);
+}
+
+#Nav-Bar {
+    background-color: rgb(118, 178, 255);
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    list-style: none;
+    overflow: hidden;
+}
+
+#Nav-Bar li {
+    float: left;
+}
+
+/*Style the nav-bar and its elements*/
+#Nav-Bar li a {
+    display: block;
+
+    font-size: 30px;
+    color: rgb(54, 54, 54);
+    text-decoration: none;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#Nav-Bar li a:hover {
+    background-color: rgb(88, 160, 255);
+}
+
+#Profile-Button a{
+    position: absolute;
+    right: 0;
+
+    background-color: rgb(97, 164, 252);
+
+    font-size: 30px;
+    color: rgb(54, 54, 54);
+    text-decoration: none;
+
+    padding-top: 8px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border-style: none;
+}
+
+#Profile-Button a:hover{
+    background-color: rgb(33, 93, 172);
+}
+
+.active {
+    background-color: rgb(56, 142, 255);
+}
+
+#Page-Content {
+    min-height: 100vh;
+}
+
+#Page-Footer{
+    background-color: rgb(255, 255, 255);
+}
+
+#Page-Footer hr {
+    margin-top: 0;
+}
