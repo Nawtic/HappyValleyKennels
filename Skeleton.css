@@ -1,6 +1,8 @@
 body{
     margin: 0;
     padding: 0;
+
+    background-color: rgb(243, 250, 252);
 }
 
 /* Style the page header and its content */
@@ -75,4 +77,16 @@ body{
 
 .active {
     background-color: rgb(56, 142, 255);
+}
+
+#Page-Content {
+    min-height: 100vh;
+}
+
+#Page-Footer{
+    background-color: rgb(255, 255, 255);
+}
+
+#Page-Footer hr {
+    margin-top: 0;
 }
