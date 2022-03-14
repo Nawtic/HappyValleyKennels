@@ -84,7 +84,6 @@ body{
 
 /* Style content area */
 #Page_Content {
-    
     min-height: 100vh;
 }
 
@@ -100,11 +99,7 @@ body{
 
 #Footer_Content {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: row;
-}
-
-#Footer_Content object,p,a {
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-bottom: 10px;
 }
