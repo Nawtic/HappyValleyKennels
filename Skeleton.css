@@ -5,15 +5,16 @@ body{
     background-color: rgb(243, 250, 252);
 }
 
+
 /* Style the page header and its content */
-#Page-Header {
+#Page_Header {
     background-color: rgb(217, 249, 255);
     padding: 20px;
     display: flex;
     justify-content: center;
 }
 
-#Page-Header a{
+#Page_Header a{
     margin: 0;
 
     text-decoration: none;
@@ -21,7 +22,7 @@ body{
     color: rgb(54, 54, 54);
 }
 
-#Nav-Bar {
+#Nav_Bar {
     background-color: rgb(118, 178, 255);
 
     margin-top: 0;
@@ -31,12 +32,13 @@ body{
     overflow: hidden;
 }
 
-#Nav-Bar li {
+
+/*Style the nav-bar and its elements*/
+#Nav_Bar li {
     float: left;
 }
 
-/*Style the nav-bar and its elements*/
-#Nav-Bar li a {
+#Nav_Bar li a {
     display: block;
 
     font-size: 30px;
@@ -49,11 +51,11 @@ body{
     padding-right: 20px;
 }
 
-#Nav-Bar li a:hover {
+#Nav_Bar li a:hover {
     background-color: rgb(88, 160, 255);
 }
 
-#Profile-Button a {
+#Profile_Button a {
     position: absolute;
     right: 0;
 
@@ -71,7 +73,7 @@ body{
     border-style: none;
 }
 
-#Profile-Button a:hover {
+#Profile_Button a:hover {
     background-color: rgb(33, 93, 172);
 }
 
@@ -79,25 +81,30 @@ body{
     background-color: rgb(56, 142, 255);
 }
 
-#Page-Content {
+
+/* Style content area */
+#Page_Content {
+    
     min-height: 100vh;
 }
 
-#Page-Footer{
+
+/* Footer Styling */
+#Page_Footer{
     background-color: rgb(255, 255, 255);
 }
 
-#Page-Footer hr {
+#Page_Footer hr {
     margin-top: 0;
 }
 
-#Footer-Content {
+#Footer_Content {
     display: flex;
     justify-content: center;
     flex-direction: row;
 }
 
-#Footer-Content object,p,a {
+#Footer_Content object,p,a {
     padding-left: 200px;
     padding-right: 200px;
 }
