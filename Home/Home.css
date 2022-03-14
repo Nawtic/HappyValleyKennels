@@ -13,22 +13,45 @@
 }
 
 #Home_Image_1 {
-    margin-left: 200px;
+    margin-left: 10%;
     margin-right: 100px;
-    width: 600px;
+    width: 400px;
 }
 
-#row-1 p {
+#Intro_Text_Box {
     background-color: rgb(255, 255, 255);
 
     border-style: solid;
     border-color: rgb(248, 248, 248);
 
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px;
+
+    
 }
 
 #Happy_Valley_Emphasized {
     font-style: italic;
+    font-size: larger;
+
+    color: rgb(128, 21, 21);
+}
+
+#row-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    padding: 10px;
+
+    font-size: large;
+}
+
+#row-2 div {
+    background-color: rgb(255, 255, 255);
+
+    padding: 30px;
+}
+
+#row-2 div a {
     font-size: larger;
 }
