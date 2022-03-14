@@ -53,7 +53,7 @@ body{
     background-color: rgb(88, 160, 255);
 }
 
-#Profile-Button a{
+#Profile-Button a {
     position: absolute;
     right: 0;
 
@@ -71,7 +71,7 @@ body{
     border-style: none;
 }
 
-#Profile-Button a:hover{
+#Profile-Button a:hover {
     background-color: rgb(33, 93, 172);
 }
 
@@ -89,4 +89,15 @@ body{
 
 #Page-Footer hr {
     margin-top: 0;
+}
+
+#Footer-Content {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#Footer-Content object,p,a {
+    padding-left: 200px;
+    padding-right: 200px;
 }
