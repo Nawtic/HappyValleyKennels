@@ -49,6 +49,9 @@
 #row-2 div {
     background-color: rgb(255, 255, 255);
 
+    border-style: solid;
+    border-color: rgb(245, 199, 199);
+
     padding: 30px;
 }
 
