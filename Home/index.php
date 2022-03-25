@@ -1,5 +1,5 @@
 <?php
-    include "../Header.html";
+    include "../assets/Header.html";
 ?>
 
 <html>
@@ -35,5 +35,5 @@
 </html>
 
 <?php
-    include "../Footer.html";
+    include "../assets/Footer.html";
 ?>
