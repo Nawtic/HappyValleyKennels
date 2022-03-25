@@ -1,24 +1,13 @@
-<!DOCTYPE html>
+<?php
+    include "../Header.html";
+?>
 
 <html>
     <head>
-        <title>Happy Valley Kennels</title>
-        <link rel="stylesheet" type="text/css" href="../Skeleton.css">
         <link rel="stylesheet" type="text/css" href="Home.css">
     </head>
+
     <body>
-        <div id="Page_Header">
-            <a href="../Home">Happy Valley Kennels</a>
-        </div>
-
-        <ul id="Nav_Bar">
-            <li><a class="active" href="../Home">Home</a></li>
-            <li><a href="../About">About</a></li>
-            <li><a href="../Contact">Contact</a></li>
-            <li id="Profile_Button"><a href="../Profile">Profile</a></li>
-        </ul>
-
-        <!-- Content of this div should be unique to each page -->
         
         <div id="Page_Content">
             <div id="row-1">
@@ -34,8 +23,6 @@
                 </div>
             </div>
 
-            <!-- End Content -->
-
             <div id="row-2">
                 <div>
                     <p>Interested in our services? Have a question?</p>
@@ -44,14 +31,9 @@
             </div>
         </div>
 
-        <div id="Page_Footer">
-            <hr>
-            <div id="Footer_Content">
-                <object type="image/svg+xml" data="../assets/HappyValleyLogo.svg" width="100" height="100"></object>
-                <p>Happy Valley Kennels</p>
-                <p><a href="../Contact">Contact</a></p>
-            </div>
-        </div>
-
     </body>
 </html>
+
+<?php
+    include "../Footer.html";
+?>
