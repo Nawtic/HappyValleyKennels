@@ -55,7 +55,7 @@ body{
     background-color: rgb(88, 160, 255);
 }
 
-#Profile_Button a {
+#Profile_Button {
     position: absolute;
     right: 0;
 
@@ -73,7 +73,7 @@ body{
     border-style: none;
 }
 
-#Profile_Button a:hover {
+#Profile_Button:hover{
     background-color: rgb(33, 93, 172);
 }
 
