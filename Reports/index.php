@@ -1,5 +1,9 @@
 <?php
     include "../assets/Header/Header.php";
+
+    if(!isset($_SESSION["Role"]) AND $_SESSION["Role"] != "Employee"){
+        header('Location: /HappyValleyKennels/Assets/Error/Access Denied');
+    }
 ?>
 
 <html>
