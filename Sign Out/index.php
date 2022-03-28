@@ -2,5 +2,9 @@
     session_start();
     session_destroy();
 
-    echo("You've been signed out")
+    include "../assets/Header.php";
+
+    echo("You've been signed out");
+
+    include "../assets/Footer.html";
 ?>

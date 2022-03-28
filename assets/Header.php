@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    if(isset($_SESSION["Username"]) == 1) {
-        $username = $_SESSION["Username"];
+    if(isset($_SESSION["First Name"]) == 1) {
+        $username = $_SESSION["First Name"];
     }
     else {
         $username = "Sign In";
@@ -26,7 +26,7 @@
         </div>
 
         <ul id="Nav_Bar">
-            <li><a class="active" href="../Home">Home</a></li>
+            <li><a href="../Home">Home</a></li>
             <li><a href="../About">About</a></li>
             <li><a href="../Contact">Contact</a></li>
             <?php
