@@ -1,3 +1,10 @@
+:root {
+    --white_blue: rgb(243, 250, 252);
+    --light_blue: rgb(217, 249, 255);
+    --blue: rgb(118, 178, 255);
+    --dark_blue:rgb(33, 93, 172);
+  }
+
 body{
     margin: 0;
     padding: 0;
@@ -56,8 +63,6 @@ body{
 }
 
 #Profile_Button {
-    position: absolute;
-    right: 0;
 
     background-color: rgb(97, 164, 252);
 
@@ -67,10 +72,11 @@ body{
 
     padding-top: 8px;
     padding-bottom: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
 
     border-style: none;
+    border-radius: 4px;
 }
 
 #Profile_Button:hover{
@@ -86,4 +92,36 @@ body{
 #Page_Content {
     min-height: 80vh;
     padding: 10px;
+}
+
+/* Style dropdown menu */
+#dropdown_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    position: fixed;
+    top: 2%;
+    right: 2%;
+}
+
+#dropdown_items {
+    display: none;
+
+    background-color: var(--white_blue);
+}
+
+#dropdown_items a {
+    font-size: large;
+    text-decoration: none;
+}
+
+.show {
+    display: flex !important;
+    justify-content: center;
+}
+
+#Submit_Container {
+    display: flex;
+    justify-content: center;
 }

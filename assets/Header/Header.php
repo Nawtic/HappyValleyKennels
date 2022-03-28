@@ -20,19 +20,33 @@
                 include("Header.css");
             ?>
         </style>
+        <script>
+            <?php
+                include("Dropdown.js")
+            ?>
+        </script>
     </head>
     <body>
-        <!-- For testing purposes, will be removed later -->
-        <a href="../Sign In">Sign In</a>
-        <a href="../Sign Out">Sign Out</a>
 
         <div id="Page_Header">
             <a href="../Home">Happy Valley Kennels</a>
         </div>
 
+        <?php        
+            if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
+                echo "<div id=\"dropdown_container\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
+                include("SignOutDropdown.php");
+                echo "</div>";
+            }
+            else {
+                echo "<div id=\"dropdown_container\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
+                include("SignInDropdown.php");
+                echo "</div>";
+            }
+        ?>
+
         <ul id="Nav_Bar">
             <?php
-                echo "<button id=\"Profile_Button\">".$username."</button>";
                 if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
                     echo "<li><a href=\"../Home\">Home</a></li>";
                     echo "<li><a href=\"../Reports\">Reports</a><li>";
