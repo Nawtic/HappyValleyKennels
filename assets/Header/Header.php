@@ -52,9 +52,9 @@
                     echo "<li><a href=\"../Reports\">Reports</a><li>";
                 }
                 else {
-                    echo "<li><a href=\"../Home\">Home</a></li>";
-                    echo "<li><a href=\"../About\">About</a></li>";
-                    echo "<li><a href=\"../Contact\">Contact</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Home\">Home</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/About\">About</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Contact\">Contact</a></li>";
                 }
             ?>
         </ul>
