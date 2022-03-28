@@ -87,20 +87,3 @@ body{
     min-height: 80vh;
     padding: 10px;
 }
-
-
-/* Footer Styling */
-#Page_Footer{
-    background-color: rgb(255, 255, 255);
-}
-
-#Page_Footer hr {
-    margin-top: 0;
-}
-
-#Footer_Content {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    padding-bottom: 10px;
-}

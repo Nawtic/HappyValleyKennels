@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 
 <html>
+    <head>
+        <style>
+            <?php
+                include("Footer.css");
+            ?>
+        </style>
+    </head>
     <body>
         <div id="Page_Footer">
             <hr>

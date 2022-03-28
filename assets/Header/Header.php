@@ -14,7 +14,12 @@
 <html>
     <head>
         <title>Happy Valley Kennels</title>
-        <link rel="stylesheet" type="text/css" href="../Skeleton.css">
+
+        <style>
+            <?php
+                include("Header.css");
+            ?>
+        </style>
     </head>
     <body>
         <!-- For testing purposes, will be removed later -->
