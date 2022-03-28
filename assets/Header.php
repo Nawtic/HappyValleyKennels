@@ -26,17 +26,16 @@
         </div>
 
         <ul id="Nav_Bar">
-            <li><a href="../Home">Home</a></li>
-            <li><a href="../About">About</a></li>
-            <li><a href="../Contact">Contact</a></li>
             <?php
-                if(session_status() == 2) {
-                    echo "<button id=\"Profile_Button\">".$username;
+                echo "<button id=\"Profile_Button\">".$username."</button>";
+                if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
+                    echo "<li><a href=\"../Home\">Home</a></li>";
+                    echo "<li><a href=\"../Reports\">Reports</a><li>";
                 }
                 else {
-                    if($_SESSION["Role"] == "Employee"){
-                        echo "<button id=\"Profile_Button\">".$username;
-                    }
+                    echo "<li><a href=\"../Home\">Home</a></li>";
+                    echo "<li><a href=\"../About\">About</a></li>";
+                    echo "<li><a href=\"../Contact\">Contact</a></li>";
                 }
             ?>
         </ul>
