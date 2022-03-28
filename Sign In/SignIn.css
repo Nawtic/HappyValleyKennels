@@ -1,0 +1,86 @@
+:root {
+  --white_blue: rgb(243, 250, 252);
+  --light_blue: rgb(217, 249, 255);
+  --blue: rgb(118, 178, 255);
+  --dark_blue:rgb(33, 93, 172);
+}
+
+* {
+  box-sizing: border-box;    
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  height: 100%;
+}
+  
+#Side_Box {
+  height: 100%;
+  width: 25%;
+  padding: 15px;
+
+  float: left;
+
+  background-image: linear-gradient(var(--blue), var(--white_blue));
+}
+
+#SignIn_Form {
+  height: 100%;
+  width: 75%;
+  padding: 15px;
+
+  float: left;
+
+  background-color: var(--light_blue);
+
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  width: 50%;
+  height: 60%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--white_blue);
+
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+form div {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+}
+
+.field {
+  font-size: large;
+}
+
+#Submit_Button {
+  width: 50%;
+
+  margin-top: 5%;
+
+  background-color: var(--dark_blue);
+  color: var(--white_blue);
+
+  font-size: medium;
+}
+
+.Error {
+  color: red;
+}

@@ -1,18 +1,18 @@
 <?php
     session_start();
 
-    $passError = $nameError = "";
+    $signinError = $passError = $nameError = "";
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (empty($_POST["ID"])) {
-            $nameError = "An ID is required";
+            $nameError = "* An ID is required";
         }
         else {
             $ID=$_POST["ID"];
         }
 
         if (empty($_POST["Password"])) {
-            $passError = "A password is required";
+            $passError = "* A password is required";
         }
         else {
             $Password = $_POST["Password"];
@@ -38,7 +38,7 @@
                 header('Location: /HappyValleyKennels/Assets/SignInSuccess.php');
             }
             catch(Exception $e) {
-                echo("Connection Error, check credentials".$e);
+                $signinError = "Error connecting, check credentials";
             }
         }
     }
@@ -47,11 +47,28 @@
 <!DOCTYPE html>
 
 <html>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="SignIn.css">
+
     <body>
-        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-            ID <input type="text" name="ID"> <?php echo($nameError);?><br>
-            Password <input type="password" name="Password"> <?php echo($passError);?><br>
-            <input type="submit">
-        </form>
+        <div id="Side_Box">
+        </div>
+        <div id="SignIn_Form">
+            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
+                <h1>Sign In</h1>
+
+                <p class="Error"><?php echo $signinError;?></p>
+
+                <p>User ID  <span class="Error"><?php echo($nameError);?></span></p>
+                <input class="field" type="text" name="ID"><br>
+
+                <p>Password <span class="Error"><?php echo($passError);?></span></p>
+                <input class="field" type="password" name="Password"><br>
+                <div>
+                    <input id="Submit_Button" type="submit" value="Sign In">
+                </div>
+            </form>
+        </div>
     </body>
 </html>
