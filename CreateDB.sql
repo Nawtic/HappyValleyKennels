@@ -11,16 +11,21 @@ CREATE TABLE TestTable (
     CHECK (JOB_POSITION IN ("Customer", "Employee", "Administrator"))
 );
 
-INSERT INTO TestTable(FIRST_NAME, LAST_NAME, JOB_POSITION) VALUES ("Bill", "Board", "Employee");
+INSERT INTO TestTable(FIRST_NAME, LAST_NAME, JOB_POSITION) VALUES ("Bill", "Board", "Employee"),
+("Jane", "Doe", "Customer");
 
-SELECT * FROM TestTable;
+DROP USER IF EXISTS "001"@"localhost";
 
-DROP USER "A001";
-
-CREATE USER "A001" IDENTIFIED BY "1234";
+CREATE USER "001"@"localhost" IDENTIFIED BY "1234";
 
 GRANT SELECT
-ON testtable
-TO "A001"@"localhost";
+ON testdb.testtable
+TO "001"@"localhost";
 
-FLUSH PRIVILEGES;
+CREATE USER "002"@"localhost" IDENTIFIED BY "1234";
+
+GRANT SELECT
+ON testdb.testtable
+TO "002"@"localhost";
+
+SELECT JOB_POSITION FROM TestDB.TestTable WHERE LPAD(ID, 3, 0) = "001";
