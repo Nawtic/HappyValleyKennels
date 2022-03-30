@@ -22,11 +22,11 @@
         </style>
         <script>
             <?php
-                include("Dropdown.js")
+                include("Header.js")
             ?>
         </script>
     </head>
-    <body>
+    <body onload="setActive()">
 
         <div id="Page_Header">
             <a href="../Home">Happy Valley Kennels</a>
@@ -46,22 +46,23 @@
         ?>
 
         <ul id="Nav_Bar">
+            <!-- Links must have ids which make the directory they point to -->
             <?php
                 if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
-                    echo "<li><a href=\"../Home\">Home</a></li>";
-                    echo "<li><a href=\"../Reports\">Reports</a><li>";
-                    echo "<li><a href=\"../Finance\">Finance</a><li>";
+                    echo "<li><a href=\"../Home\" id=\"Home\">Home</a></li>";
+                    echo "<li><a href=\"../Reports\" id=\"Reports\">Reports</a><li>";
+                    echo "<li><a href=\"../Finance\" id=\"Finances\">Finance</a><li>";
                 }
                 else if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Customer"){
-                    echo "<li><a href=\"/HappyValleyKennels/Home\">Home</a></li>";
-                    echo "<li><a href=\"/HappyValleyKennels/About\">About</a></li>";
-                    echo "<li><a href=\"/HappyValleyKennels/Contact\">Contact</a></li>";
-                    echo "<li><a href=\"/HappyValleyKennels/Scheduling\">Scheduling</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Contact\" id=\"Contact\">Contact</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Scheduling\" if=\"Scheduling\">Scheduling</a></li>";
                 }
                 else {
-                    echo "<li><a href=\"/HappyValleyKennels/Home\">Home</a></li>";
-                    echo "<li><a href=\"/HappyValleyKennels/About\">About</a></li>";
-                    echo "<li><a href=\"/HappyValleyKennels/Contact\">Contact</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Contact\" id=\"Contact\">Contact</a></li>";
                 }
             ?>
         </ul>
