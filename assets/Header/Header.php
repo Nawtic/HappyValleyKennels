@@ -33,7 +33,7 @@
         </div>
 
         <?php        
-            if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
+            if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer")){
                 echo "<div id=\"dropdown_container\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
                 include("SignOutDropdown.php");
                 echo "</div>";
@@ -50,6 +50,13 @@
                 if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
                     echo "<li><a href=\"../Home\">Home</a></li>";
                     echo "<li><a href=\"../Reports\">Reports</a><li>";
+                    echo "<li><a href=\"../Finance\">Finance</a><li>";
+                }
+                else if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Customer"){
+                    echo "<li><a href=\"/HappyValleyKennels/Home\">Home</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/About\">About</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Contact\">Contact</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Scheduling\">Scheduling</a></li>";
                 }
                 else {
                     echo "<li><a href=\"/HappyValleyKennels/Home\">Home</a></li>";
