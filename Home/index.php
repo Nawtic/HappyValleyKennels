@@ -5,6 +5,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="Home.css">
+        <script src="home.js"></script>
     </head>
 
     <body>
@@ -17,7 +18,7 @@
                 </div>
                 <div id="Intro_Text_Box">
                     <!-- Note: Replace filler text during project -->
-                    <p>We are <span id="Happy_Valley_Emphasized">Happy Valley Kennels</span>...</p>
+                    <p>We are <span id="Happy_Valley_Emphasized" onclick="clicker()">Happy Valley Kennels</span>...</p>
                     <p>{And this, is filler text. Filler text is used in situations where a design element, like this paragraph, has been created and positioned, but not assigned a value. This text will eventually be replaced by other text which is relevant to the final design, but for now it is just filler text.}</p>
                     <p>{This is also filler text, but in a different paragraph. So if you had two paragraphs worth of text you could place them in different paragraph. You could also place it in one paragraph but that could be difficult to read.}</p>
                 </div>

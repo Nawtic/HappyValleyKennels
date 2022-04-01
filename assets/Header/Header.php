@@ -29,7 +29,7 @@
     <body onload="setActive()">
 
         <div id="Page_Header">
-            <a href="../Home">Happy Valley Kennels</a>
+            <a id="Header_Text" href="/HappyValleyKennels/Home">Happy Valley Kennels</a>
         </div>
 
         <?php        
@@ -49,9 +49,9 @@
             <!-- Links must have ids which make the directory they point to -->
             <?php
                 if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
-                    echo "<li><a href=\"../Home\" id=\"Home\">Home</a></li>";
-                    echo "<li><a href=\"../Reports\" id=\"Reports\">Reports</a><li>";
-                    echo "<li><a href=\"../Finance\" id=\"Finances\">Finance</a><li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Reports\" id=\"Reports\">Reports</a><li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Finance\" id=\"Finances\">Finance</a><li>";
                 }
                 else if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Customer"){
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
