@@ -2,6 +2,11 @@ function showDropdown() {
     document.getElementById("dropdown_items").classList.toggle("show");
 }
 
+
+function hideDropdown(){
+    document.getElementById("dropdown_items").classList.remove("show");
+}
+
 function setActive() {
     //Get current url
     var url = window.location.href;
