@@ -14,9 +14,9 @@
             <div id="stats" class="window">
                 <h2>Stats</h2>
                 <h3>Manual Click Upgrades</h3>
-                <p><span id="manual_click_upgrades"></span> Upgrades :: <span id="clicks_per_click"></span> Clciks per Click</p>
+                <p><span id="manual_click_upgrades"></span> Upgrades :: <span id="clicks_per_click"></span> Clicks per Click</p>
                 <h3>Auto Click Upgrades</h3>
-                <p><span id="auto_click_upgrades"></span> Upgrades :: <span id="clicks_per_second"></span> Clciks per Second</p>
+                <p><span id="auto_click_upgrades"></span> Upgrades :: <span id="clicks_per_second"></span> Clicks per Second</p>
             </div>
             <div id="play_area" class="window">
                 <h1 id="Counter">0</h1>
