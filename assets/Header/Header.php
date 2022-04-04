@@ -34,12 +34,12 @@
 
         <?php        
             if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer")){
-                echo "<div id=\"dropdown_container\" onmouseleave=\"hideDropdown()\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
+                echo "<div id=\"dropdown_container\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
                 include("SignOutDropdown.php");
                 echo "</div>";
             }
             else {
-                echo "<div id=\"dropdown_container\" onmouseleave=\"hideDropdown()\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
+                echo "<div id=\"dropdown_container\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
                 include("SignInDropdown.php");
                 echo "</div>";
             }
