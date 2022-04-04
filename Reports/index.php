@@ -6,6 +6,8 @@
     }
 ?>
 
+<!-- Page Credit: Alexa Miller -->
+
 <html>
     <head>
         <title>Happy Valley Kennels</title>

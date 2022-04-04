@@ -57,7 +57,7 @@
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Contact\" id=\"Contact\">Contact</a></li>";
-                    echo "<li><a href=\"/HappyValleyKennels/Scheduling\" if=\"Scheduling\">Scheduling</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Scheduling\" id=\"Scheduling\">Scheduling</a></li>";
                 }
                 else {
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";

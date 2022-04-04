@@ -1,5 +1,4 @@
 body {
-  font-family: Calibri, Helvetica, sans-serif;
   background-color: pink;
 }
 .container {
@@ -22,10 +21,10 @@ input[type="password"]:focus {
   background-color: orange;
   outline: none;
 }
-div {
+.Entry_Area {
   padding: 10px 0;
 }
-hr {
+.black_line {
   border: 1px solid #f1f1f1;
   margin-bottom: 25px;
 }
