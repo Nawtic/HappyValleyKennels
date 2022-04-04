@@ -46,7 +46,7 @@
         ?>
 
         <ul id="Nav_Bar">
-            <!-- Links must have ids which make the directory they point to -->
+            <!-- Links must have ids which match the directory they point to -->
             <?php
                 if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
