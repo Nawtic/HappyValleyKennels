@@ -1,7 +1,5 @@
 USE KennelDB;
 
-DROP TABLE customers;
-
 CREATE TABLE customers (
 	id INT(3) AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(20) NOT NULL,
@@ -12,7 +10,6 @@ CREATE TABLE customers (
 
 INSERT INTO customers(first_name, last_name, email_address, phone_number) VALUES ("Jane", "Doe", "jane.doe@gmail.com", "111-222-3456");
 
-DROP USER "1001"@"localhost";
 CREATE USER "1001"@"localhost" IDENTIFIED BY "1234";
 
 GRANT SELECT

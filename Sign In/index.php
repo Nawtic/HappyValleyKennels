@@ -24,20 +24,27 @@
             
 
             try {
+                $conn = new mysqli($Servername, $ID, $Password);
+
                 if($ID[0] == "1"){
                     $_SESSION["Role"] = "Customer";
-                    $conn = new mysqli($Servername, $ID, $Password);
 
                     $Query = "SELECT first_name, last_name FROM KennelDB.customers WHERE LPAD(id, 3, \"0\") = ".ltrim($ID, 1);
-
-                    $_SESSION["UserID"] = $ID;
-                    $_SESSION["Password"] = $Password;
-                    $row = $conn -> query($Query) -> fetch_assoc();
-                    $_SESSION["First Name"] = $row["first_name"];
-                    $_SESSION["Last Name"] = $row["last_name"];
-
-                    header('Location: /HappyValleyKennels/Assets/SignInSuccess.php');
                 }
+                else if ($ID[0] == "2"){
+                    $_SESSION["Role"] = "Employee";
+                    
+
+                    $Query = "SELECT first_name, last_name FROM KennelDB.employees WHERE LPAD(id, 3, \"0\") = ".ltrim($ID, 1);
+                }
+
+                $_SESSION["UserID"] = $ID;
+                $_SESSION["Password"] = $Password;
+                $row = $conn -> query($Query) -> fetch_assoc();
+                $_SESSION["First Name"] = $row["first_name"];
+                $_SESSION["Last Name"] = $row["last_name"];
+
+                header('Location: /HappyValleyKennels/Assets/SignInSuccess.php');
             }
             catch(Exception $e) {
                 $signinError = "Error connecting, check credentials";
