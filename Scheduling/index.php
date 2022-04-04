@@ -1,5 +1,15 @@
 <?php
 include("../assets/Header/Header.php");
+
+$Servername = "localhost";
+$ID = $_SESSION["UserID"];
+
+$conn = new mysqli($Servername, $ID, $_SESSION["Password"]);
+$Query = "SELECT email_address, phone_number FROM KennelDB.customers WHERE LPAD(id, 3, \"0\") = ".ltrim($ID, 1);
+$row = $conn -> query($Query) -> fetch_assoc();
+
+$Email = $row["email_address"];
+$Phone = $row["phone_number"];
 ?>
 
 <!-- Page Credit: Andres Bastidas -->
@@ -25,10 +35,10 @@ include("../assets/Header/Header.php");
       </center>
       <hr class="black_line">
       <label> Owner's Name </label>
-      <input type="text" name="firstname" placeholder="Your Name" size="15" required />
+      <input type="text" name="firstname" placeholder="Your Name" size="15" required value=<?php echo("\"".$_SESSION["First Name"]." ".$_SESSION["Last Name"]."\"");?> readonly/>
 
       <label for="email">Email</label>
-      <input type="text" placeholder="Enter Email" name="email" required>
+      <input type="text" placeholder="Enter Email" name="email" required value=<?php echo("\"".$Email."\"")?>>
 
       <label> Dog's Name </label>
       <input type="text" name="middlename" placeholder="Your Dog Name" size="15" required />
@@ -61,7 +71,7 @@ include("../assets/Header/Header.php");
         Phone Number :
       </label>
       <input type="text" name="country code" placeholder="Country Code" value="+1" size="2" />
-      <input type="text" name="phone" placeholder="phone no." size="10" / required>
+      <input type="text" name="phone" placeholder="phone no." size="10" required value=<?php echo("\"".$Phone."\"")?>>
       Current Address :
       <textarea cols="80" rows="5" placeholder="Current Address" value="address" required>
       </textarea>
