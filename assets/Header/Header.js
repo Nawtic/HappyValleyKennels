@@ -18,4 +18,11 @@ function setActive() {
     var currentPage = splitUrl[4];
 
     document.getElementById(currentPage).classList.toggle("active");
+
+    var subpage = splitUrl[5]; 
+
+    //Activate if a subpage is open
+    if(subpage != undefined){
+        document.getElementById(subpage).classList.toggle("subActive");
+    }
 }

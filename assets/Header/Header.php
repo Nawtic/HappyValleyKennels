@@ -51,7 +51,7 @@
                 if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Employee"){
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Reports\" id=\"Reports\">Reports</a><li>";
-                    echo "<li><a href=\"/HappyValleyKennels/Finance\" id=\"Finances\">Finance</a><li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Finance\" id=\"Finance\">Finance</a><li>";
                 }
                 else if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Customer"){
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
