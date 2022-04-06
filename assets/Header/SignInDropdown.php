@@ -8,4 +8,7 @@
         <div id="Submit_Container">
             <input id="Submit_Button" type="submit" value="Sign In">
         </div>
+
+        <p>Need an Account? <a href="/HappyValleyKennels/Sign Up">Sign Up</a></p>
+    </form>
 </div>

@@ -31,7 +31,7 @@
             <div id="row-2">
                 <div>
                     <p>Interested in our services? Have a question?</p>
-                    <p><a href="../Profile/">Make an Account</a> or <a href="../Contact">Reach out to Us</a></p>
+                    <p><a href="/HappyValleyKennels/Sign Up">Make an Account</a> or <a href="../Contact">Reach out to Us</a></p>
                 </div>
             </div>
         </div>
