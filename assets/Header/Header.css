@@ -43,6 +43,8 @@ body{
     color: rgb(54, 54, 54);
 }
 
+/*Style the nav-bar and its elements*/
+
 #Nav_Bar {
     background-color: rgb(118, 178, 255);
 
@@ -53,8 +55,6 @@ body{
     overflow: hidden;
 }
 
-
-/*Style the nav-bar and its elements*/
 #Nav_Bar li {
     float: left;
 }
