@@ -29,13 +29,12 @@
                 if($ID[0] == "1"){
                     $_SESSION["Role"] = "Customer";
 
-                    $Query = "SELECT first_name, last_name FROM KennelDB.customers WHERE LPAD(id, 3, \"0\") = ".ltrim($ID, 1);
+                    $Query = "SELECT first_name, last_name FROM KennelDB.customers WHERE LPAD(id, 3, \"0\") = ".ltrim($ID, "1");
                 }
                 else if ($ID[0] == "2"){
                     $_SESSION["Role"] = "Employee";
                     
-
-                    $Query = "SELECT first_name, last_name FROM KennelDB.employees WHERE LPAD(id, 3, \"0\") = ".ltrim($ID, 1);
+                    $Query = "SELECT first_name, last_name FROM KennelDB.employees WHERE LPAD(id, 3, \"0\") = ".ltrim($ID, "2");
                 }
 
                 $_SESSION["UserID"] = $ID;

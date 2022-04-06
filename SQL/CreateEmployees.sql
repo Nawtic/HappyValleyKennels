@@ -8,7 +8,7 @@ CREATE TABLE employees (
     phone_number VARCHAR(12) NOT NULL
 );
 
-INSERT INTO customers(first_name, last_name, email_address, phone_number) VALUES ("Bill", "Board", "billsboards@outlook.com", "222-333-4567");
+INSERT INTO employees(first_name, last_name, email_address, phone_number) VALUES ("Bill", "Board", "billsboards@outlook.com", "222-333-4567");
 
 CREATE USER "2001"@"localhost" IDENTIFIED BY "1234";
 
