@@ -1,3 +1,5 @@
+<!-- Page Credit: Andres Bastidas -->
+
 <?php
 include("../assets/Header/Header.php");
 
@@ -11,8 +13,6 @@ $row = $conn -> query($Query) -> fetch_assoc();
 $Email = $row["email_address"];
 $Phone = $row["phone_number"];
 ?>
-
-<!-- Page Credit: Andres Bastidas -->
 
 <!DOCTYPE html>
 <html lang="en">
