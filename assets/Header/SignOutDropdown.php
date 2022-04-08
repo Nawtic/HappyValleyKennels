@@ -1,3 +1,3 @@
 <div id="dropdown_items">
-    <a href="../Sign Out">Sign Out</a>
+    <a href="/HappyValleyKennels/Sign Out">Sign Out</a>
 </div>

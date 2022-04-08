@@ -22,7 +22,7 @@ function setActive() {
     var subpage = splitUrl[5]; 
 
     //Activate if a subpage is open
-    if(subpage != undefined){
+    if((subpage != undefined) && (subpage != "")){
         document.getElementById(subpage).classList.toggle("subActive");
     }
 }
