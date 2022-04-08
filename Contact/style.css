@@ -1,0 +1,84 @@
+body {
+	background-color: rgb(217, 249, 255);
+	font-size: 20px;
+}
+
+.container {
+	width: 80%;
+	margin: 50px auto;
+}
+
+.contact-box {
+	background: #fff;
+	display: flex;
+}
+
+.contact-left {
+	flex-basis: 60%;
+	padding: 40px 60px;
+}
+
+.contact-right {
+	flex-basis: 40%;
+	padding: 40px;
+	background: #1c00b5;
+	color: #fff
+}
+
+h1 {
+	margin-bottom: 10px;
+}
+
+.container p {
+	margin-bottom: 40px;
+}
+
+.input-row .input-group {
+	flex-basis: 45%;
+}
+
+.text-input {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	outline: none;
+	padding-bottom: 5px;
+}
+
+textarea {
+	width: 100%;
+	border: 1px solid #ccc;
+	outline: none;
+	padding: 5px;
+}
+
+label {
+	display: block;
+	color: #1c00b5;
+}
+
+#contact_submit {
+	background: #1c00b5;
+	width: 100px;
+	border: none;
+	outline: none;
+	color: #fff;
+	height: 35px;
+	border-radius: 30px;
+	margin-top: 20px;
+}
+
+.contact-left h3 {
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+.contact-right h3 {
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+
+tr td {
+	padding-right: 40px;
+	padding-top: 20px;
+}
