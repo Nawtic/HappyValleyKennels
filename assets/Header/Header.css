@@ -111,6 +111,7 @@ body{
 #Page_Content {
     min-height: 80vh;
     padding: 10px;
+    text-align: center;
 }
 
 /* Style dropdown menu */
