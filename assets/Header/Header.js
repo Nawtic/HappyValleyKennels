@@ -23,6 +23,11 @@ function setActive() {
 
     //Activate if a subpage is open
     if((subpage != undefined) && (subpage != "")){
-        document.getElementById(subpage).classList.toggle("subActive");
+        try {
+            document.getElementById(subpage).classList.toggle("subActive");
+        } catch (error) {
+            console.log(error);
+        }
+        
     }
 }
