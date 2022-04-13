@@ -1,4 +1,6 @@
 <?php
+include "../assets/Header/Header.php";
+
 require_once('database.php');
 if (!isset($ID)) {
     $ID = filter_input(INPUT_GET, 'ID', 
@@ -8,20 +10,16 @@ if (!isset($ID)) {
     }
 }
 $queryReports = 'SELECT * FROM reports
-                  ORDER BY ID';
+                  WHERE ID = :ID';
 $statement1 = $db->prepare($queryReports);
-$statement1->bindValue('ID', $ID);
+$statement1->bindValue(':ID', $ID);
 $statement1->execute();
 $reports = $statement1->fetchAll();
+print_r($reports);
 $statement1->closeCursor();
 $title='Reports';
 ?>
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <!DOCTYPE html>
 
 <html>
@@ -31,18 +29,6 @@ and open the template in the editor.
         <link rel="stylesheet" type="text/css" href="reports.css">
     </head>
     <body>
-        <div id="Page_Header">
-            <a href="../Home">Happy Valley Kennels</a>
-        </div>
-
-        <ul id="Nav_Bar">
-            <li><a class="active" href="../Home">Home</a></li>
-            <li><a href="../About">About</a></li>
-            <li><a href="../Reports/reports.html">Reports</a></li>
-            <li><a href="../FAQ">FAQ</a></li>
-            <li><a href="../Contact">Contact</a></li>
-            <li id="Profile_Button"><a href="../Profile">Profile</a></li>
-        </ul>
 
         <!-- Content of this div should be unique to each page -->
         <div id="Page_Content">
