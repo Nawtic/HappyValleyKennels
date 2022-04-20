@@ -1,6 +1,8 @@
 <!-- Page Credit: Mauricio Alfaro -->
 
 <?php
+$page_creator = "Mauricio Alfaro";
+
 include "../assets/Header/Header.php";
 ?>
 

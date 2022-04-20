@@ -1,4 +1,8 @@
 <?php
+    if(!isset($page_creator)){
+        $page_creator = "Unknown";
+    }
+
     session_start();
 
     if(isset($_SESSION["First Name"])) {
@@ -31,6 +35,8 @@
         <div id="Page_Header">
             <a id="Header_Text" href="/HappyValleyKennels/Home">Happy Valley Kennels</a>
         </div>
+
+        <p id="page_credit">Page Creator: <?php echo($page_creator); ?></p>
 
         <?php        
             if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer")){
