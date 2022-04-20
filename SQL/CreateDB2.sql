@@ -22,6 +22,7 @@ CREATE TABLE dogs (
 	dog_id int AUTO_INCREMENT NOT NULL,
     owner_id int NOT NULL,
     name VARCHAR(255),
+    size VARCHAR(25) NOT NULL,
     PRIMARY KEY (dog_id),
     FOREIGN KEY (owner_id) REFERENCES owners(owner_id)
 );
