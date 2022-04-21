@@ -143,9 +143,25 @@ body{
     text-decoration: none;
 }
 
+#dropdown_items button, #Submit_Button{
+    background-color: var(--dark_blue);
+    
+    border-color: var(--dark_blue);
+    border-style: solid;
+    border-radius: 5px;
+
+    color: var(--white_blue);
+    font-family: Y14;
+    font-size: medium;
+}
+
 .show {
     display: flex !important;
     justify-content: center;
+}
+
+.hide {
+    display: none !important;
 }
 
 #Submit_Container {
@@ -153,8 +169,19 @@ body{
     justify-content: center;
 }
 
-form {
-    display: flex !important;
+#sign_in_options {
+    padding: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#customer_sign_in, #employee_sign_in {
+    display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
+}
+
+#customer_sign_in > *, #employee_sign_in > * {
+    margin: 2%;
 }
