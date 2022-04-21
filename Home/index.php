@@ -1,4 +1,6 @@
 <?php
+    $page_creator = "Stephen Erichsen";
+
     include "../assets/Header/Header.php";
 ?>
 
