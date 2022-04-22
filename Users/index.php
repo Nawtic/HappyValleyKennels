@@ -18,10 +18,27 @@ if ((!isset($_SESSION["Role"])) AND ($_SESSION["Role"] != "ITAdmin")) {
             <div id="options_menu">
                 <p>Select An Option</p>
                 <button onclick="addUser()">Add User</button>
+                <button>Edit User</button>
             </div>
             <div id="add_menu" class="hide">
+                <h2>Add New Employee</h2>
                 <form>
-                    <input type="text">
+                    <label for="first_name">First Name</label><br>
+                    <input type="text" id="first_name"><br>
+
+                    <label for="last_name">Last Name</label><br>
+                    <input type="text" id="last_name"><br>
+                    
+                    <label for="role">Role</label><br>
+
+                    <input type="radio" id="employee" name="role">
+                    <label for="employee">Employee</label><br>
+
+                    <input type="radio" id="veterinarian" name="role">
+                    <label for="veterinarian">Veterinarian</label><br>
+
+                    <input type="radio" id="administrator" name="role">
+                    <label for="administrator">Administrator</label><br>
                 </form>
             </div>
         </div>

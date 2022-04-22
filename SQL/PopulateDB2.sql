@@ -6,7 +6,7 @@ INSERT INTO dogs(owner_id, name) VALUES (1, "Sporky");
 
 INSERT INTO cages(cage_size) VALUES ("Large");
 
-INSERT INTO employees(role, first_name, last_name, password) VALUES ("Employee", "Bill", "Board", "$2y$10$EU6Me6ejb7P.J1wOoaognO55VHMvt3iSw.gG8izmlCVEZQPzPH75a"), ("Admin", "Laura", "Ipsum", "$2y$10$EU6Me6ejb7P.J1wOoaognO55VHMvt3iSw.gG8izmlCVEZQPzPH75a"); 
+INSERT INTO employees(role, first_name, last_name, password) VALUES ("Employee", "Bill", "Board", "$2y$10$EU6Me6ejb7P.J1wOoaognO55VHMvt3iSw.gG8izmlCVEZQPzPH75a"), ("ITAdmin", "Laura", "Ipsum", "$2y$10$EU6Me6ejb7P.J1wOoaognO55VHMvt3iSw.gG8izmlCVEZQPzPH75a"); 
 
 INSERT INTO open_drop_offs(owner_id, dog_id, cage_id, drop_date, retrieve_date) VALUES (1, 1, 1, now(), date_add(now(), INTERVAL 3 DAY));
 
@@ -18,8 +18,8 @@ SELECT concat(first_name, " " ,last_name) AS "Owner", name AS "Dog", drop_date A
 	JOIN dogs
 		ON open_drop_offs.dog_id = dogs.dog_id;
 
-DROP USER IF EXISTS "admin"@"localhost";
-CREATE USER "admin"@"localhost" IDENTIFIED BY "admin";
+DROP USER IF EXISTS "itadmin"@"localhost";
+CREATE USER "itadmin"@"localhost" IDENTIFIED BY "itadmin";
 GRANT SELECT, UPDATE, INSERT ON happy_kennel.employees TO "admin"@"localhost";
 
 DROP USER IF EXISTS "logincheck"@"localhost";
