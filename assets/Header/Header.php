@@ -64,6 +64,10 @@
                     echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Contact\" id=\"Contact\">Contact</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Scheduling\" id=\"Scheduling\">Scheduling</a></li>";
+                } else if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "ITAdmin"){
+                    echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Users\" id=\"Users\">Users</a></li>";
                 }
                 else {
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
