@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+}
+
+#Page_Content {
+    height: 70%;
+}
+
+.hide {
+    display: none;
+}
+
+#Page_Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#options_menu, #add_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: rgb(196, 196, 214);
+    min-width: 50%;
+    
+    padding: .05% 3% 5%;
+
+    height: 100%;
+
+    margin: 1%;
+}
+
+#options_menu button{
+    margin: 1%;
+    width: 30%;
+
+    background-color: var(--dark_blue);
+
+    color: var(--light_blue);
+    font-family: Y14;
+    font-size: x-large;
+
+    border-radius: 10px;
+    border-style: none;
+}
+
+form{
+    text-align: left;
+}

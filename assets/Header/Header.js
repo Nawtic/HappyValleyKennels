@@ -3,8 +3,11 @@ function showDropdown() {
 }
 
 
-function hideDropdown() {
-    document.getElementById("dropdown_items").classList.remove("show");
+function toggleSignIn() {
+    document.getElementById("employee_sign_in").classList.toggle("hide");
+    document.getElementById("customer_sign_in").classList.toggle("hide");
+    document.getElementById("customer_sign_in_button").classList.toggle("hide");
+    document.getElementById("employee_sign_in_button").classList.toggle("hide");
 }
 
 function setActive() {

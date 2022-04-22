@@ -15,7 +15,14 @@
     src: url(/HappyValleyKennels/assets/fonts//Y1452018-1Gjd0.woff) format("woff");
 }
 
+html{
+    height: 100%;
+    overflow-x: hidden;
+}
+
 body{
+    height: 100%;
+    
     margin: 0;
     padding: 0;
 
@@ -28,15 +35,17 @@ body{
 /* Style the page header and its content */
 #Page_Header {
     background-color: rgb(217, 249, 255);
-    padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 
     font-family: playball;
 }
 
 #Page_Header a{
-    margin: 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
 
     text-decoration: none;
     font-size: 50px;
@@ -46,20 +55,24 @@ body{
 /*Style the nav-bar and its elements*/
 
 #Nav_Bar {
+    font-family: Y14;
+    width: 100%;
+
     background-color: rgb(118, 178, 255);
 
     margin-top: 0;
     margin-bottom: 0;
 
     list-style: none;
-    overflow: hidden;
 }
 
 #Nav_Bar li {
     float: left;
+    padding: 0.1%;
 }
 
 #Nav_Bar li a {
+    border-radius: 10px;
     display: block;
 
     font-size: 30px;
@@ -109,13 +122,15 @@ body{
 
 /* Style content area */
 #Page_Content {
-    min-height: 80vh;
-    padding: 10px;
+    min-height: 70%;
+    margin: 1%;
     text-align: center;
 }
 
 /* Style dropdown menu */
 #dropdown_container {
+    font-family: Y14;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,9 +158,25 @@ body{
     text-decoration: none;
 }
 
+#dropdown_items button, #Submit_Button{
+    background-color: var(--dark_blue);
+    
+    border-color: var(--dark_blue);
+    border-style: solid;
+    border-radius: 5px;
+
+    color: var(--white_blue);
+    font-family: Y14;
+    font-size: medium;
+}
+
 .show {
     display: flex !important;
     justify-content: center;
+}
+
+.hide {
+    display: none !important;
 }
 
 #Submit_Container {
@@ -153,10 +184,21 @@ body{
     justify-content: center;
 }
 
-form {
-    display: flex !important;
+#sign_in_options {
+    padding: 5%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#customer_sign_in, #employee_sign_in {
+    display: flex;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
+}
+
+#customer_sign_in > *, #employee_sign_in > * {
+    margin: 2%;
 }
 
 #page_credit {

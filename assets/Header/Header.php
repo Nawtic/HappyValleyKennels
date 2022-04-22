@@ -31,15 +31,16 @@
         </script>
     </head>
     <body onload="setActive()">
+        <p id="page_credit">Page Creator: <?php echo($page_creator); ?></p>
 
         <div id="Page_Header">
             <a id="Header_Text" href="/HappyValleyKennels/Home">Happy Valley Kennels</a>
-        </div>
+        
 
-        <p id="page_credit">Page Creator: <?php echo($page_creator); ?></p>
+        
 
         <?php        
-            if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer")){
+            if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer" OR $_SESSION["Role"] == "ITAdmin")){
                 echo "<div id=\"dropdown_container\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
                 include("SignOutDropdown.php");
                 echo "</div>";
@@ -64,6 +65,10 @@
                     echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Contact\" id=\"Contact\">Contact</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Scheduling\" id=\"Scheduling\">Scheduling</a></li>";
+                } else if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "ITAdmin"){
+                    echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
+                    echo "<li><a href=\"/HappyValleyKennels/Users\" id=\"Users\">Users</a></li>";
                 }
                 else {
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
@@ -72,5 +77,6 @@
                 }
             ?>
         </ul>
+        </div>
     </body>
 </html>
