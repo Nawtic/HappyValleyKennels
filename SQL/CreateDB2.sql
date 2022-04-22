@@ -4,6 +4,18 @@ CREATE DATABASE happy_kennel;
 
 USE happy_kennel;
 
+-- Create a table which holds all employees --
+
+CREATE TABLE employees (
+	employee_id int AUTO_INCREMENT NOT NULL,
+    role VARCHAR(25) NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    PRIMARY KEY (employee_id)
+);
+
+
 -- Create a table which holds all dog owners --
 
 CREATE TABLE owners (
@@ -12,6 +24,7 @@ CREATE TABLE owners (
     last_name VARCHAR(255) NOT NULL,
     email_address VARCHAR(255) NOT NULL,
     phone_number VARCHAR(15) DEFAULT NULL,
+    password VARCHAR(255) NOT NULL,
     PRIMARY KEY (owner_id)
 );
 

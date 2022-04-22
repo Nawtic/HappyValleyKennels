@@ -1,3 +1,5 @@
+<!-- Dropdown by Stephen Erichsen -->
+
 <div id="dropdown_items">
     <div>
         <div id="sign_in_options">
@@ -19,7 +21,7 @@
             <a href="/HappyValleyKennels/Sign Up">Sign Up</a>
         </form>
 
-        <form id="employee_sign_in" class="hide" action="/HappyValleyKennels/Sign In/index.php" method="post">
+        <form id="employee_sign_in" class="hide" action="/HappyValleyKennels/Employee Sign In/index.php" method="post">
             <p>Employee ID</p>
             <input class="field" type="text" name="ID"><br>
 
