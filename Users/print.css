@@ -1,0 +1,22 @@
+@media print {
+    html {
+        height: 25%;
+    }
+
+    #Page_Header, #Page_Footer, #page_credit, #message{
+        display: none;
+    }
+
+    #Page_Content{
+        display: flex !important;
+        flex-direction: column;
+        text-align: left;
+
+        border-style: solid;
+        padding: 10%;
+    }
+
+    #Page_Content h3{
+        border-style: dotted;
+    }
+}

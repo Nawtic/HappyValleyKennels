@@ -40,7 +40,7 @@
         
 
         <?php        
-            if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer" OR $_SESSION["Role"] == "HR")){
+            if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer" OR $_SESSION["Role"] == "Human Resources")){
                 echo "<div id=\"dropdown_container\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
                 include("SignOutDropdown.php");
                 echo "</div>";
@@ -65,7 +65,7 @@
                     echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Contact\" id=\"Contact\">Contact</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Scheduling\" id=\"Scheduling\">Scheduling</a></li>";
-                } else if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "HR"){
+                } else if(isset($_SESSION["Role"]) AND $_SESSION["Role"] == "Human Resources"){
                     echo "<li><a href=\"/HappyValleyKennels/Home\" id=\"Home\">Home</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/About\" id=\"About\">About</a></li>";
                     echo "<li><a href=\"/HappyValleyKennels/Users\" id=\"Users\">Users</a></li>";
