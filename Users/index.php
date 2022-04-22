@@ -2,7 +2,7 @@
 $page_creator = "Stephen Erichsen";
 include($_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php");
 
-if ((!isset($_SESSION["Role"])) AND ($_SESSION["Role"] != "ITAdmin")) {
+if ((!isset($_SESSION["Role"])) AND ($_SESSION["Role"] != "HR")) {
     print_r($_SESSION["Role"]);
 }
 ?>
