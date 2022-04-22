@@ -9,19 +9,19 @@ if ((!isset($_SESSION["Role"])) AND ($_SESSION["Role"] != "ITAdmin")) {
 
 <html>
     <head>
-        <script src="user_manage.js"></script>\
+        <script src="user_manage.js"></script>
         <link rel="stylesheet" type="text/css" href="users.css">
     </head>
     <body>
         <div id="Page_Content">
             <h1>Employee User Management System</h1>
             <div id="options_menu">
-                <p>Select An Option</p>
+                <h2>Select An Option</h2>
                 <button onclick="addUser()">Add User</button>
                 <button>Edit User</button>
             </div>
             <div id="add_menu" class="hide">
-                <h2>Add New Employee</h2>
+                <h1>Add New Employee</h1>
                 <form>
                     <label for="first_name">First Name</label><br>
                     <input type="text" id="first_name"><br>
