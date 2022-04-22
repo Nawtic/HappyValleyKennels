@@ -1,4 +1,6 @@
 <?php
+$page_creator = "Alexa Miller";
+
 include "../assets/Header/Header.php";
 
 require_once('database.php');

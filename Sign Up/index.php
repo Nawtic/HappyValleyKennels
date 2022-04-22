@@ -1,7 +1,9 @@
 <!-- Page Credit: Isaac Asare -->
 
 <?php
-  include("../assets/Header/Header.php");
+$page_creator = "Isaac Asare";
+
+include("../assets/Header/Header.php");
 ?>
 
 <!DOCTYPE html>
@@ -11,14 +13,14 @@
 <head>
   <meta charset="utf-8">
   <title>Happy Valley Kennels</title>
-    <link rel="stylesheet" type="text/css" href="signup.css">
+  <link rel="stylesheet" type="text/css" href="signup.css">
 </head>
 
 <body>
-  
+
   <div id="Page_Content">
     <section>
-      <form action="action_page.php" style="border:1px solid #ccc">
+      <form action="index.php" method="POST" style="border:1px solid #ccc">
         <div class="container">
           <h1>Sign Up</h1>
           <p>Please fill in this form to create an account.</p>
@@ -54,5 +56,5 @@
 </html>
 
 <?php
-    include "../assets/Footer/Footer.php";
+include "../assets/Footer/Footer.php";
 ?>
