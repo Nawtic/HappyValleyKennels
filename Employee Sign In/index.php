@@ -37,8 +37,13 @@
                             $_SESSION["UserID"] = $queryResult["employee_id"];
                             $_SESSION["First Name"] = $queryResult["first_name"];
                             $_SESSION["Last Name"] = $queryResult["last_name"];
-
-                            header('Location: /HappyValleyKennels/Assets/SignInSuccess.php');
+                            
+                            if($queryResult["pending_reset"] == False){
+                                header('Location: SignInSuccess.php');
+                            } else {
+                                header('Location: Reset.php');
+                            }
+                            
                         } else {
                             throw new Exception("Invalid Password");
                         }

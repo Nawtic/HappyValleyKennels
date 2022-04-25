@@ -1,0 +1,66 @@
+html, body, #Page_Content{
+    overflow-y: hidden;
+}
+
+#Page_Header{
+    display: none;
+}
+
+#Page_Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#reset_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 50%;
+
+    margin-top: 5%;
+
+    padding: 0%, 5%;
+
+    background-color: var(--dark_blue);
+
+    border-radius: 10px;
+}
+
+#reset_form input {
+    width: 50%;
+    margin: 1%;
+
+    font-size: x-large;
+}
+
+#show_password {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+
+    width: 60%;
+}
+
+#show_password_label {
+    font-size: xx-large;
+}
+
+#show_password_checkbox {
+    max-width: 6%;
+}
+
+#submit_button {
+    margin-top: 5% !important;
+    margin-bottom: 5% !important;
+}
+
+.input_error {
+    border-color: red;
+}
+
+#error_text {
+    color: red;
+}
