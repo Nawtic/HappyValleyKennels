@@ -12,6 +12,7 @@ CREATE TABLE employees (
     first_name VARCHAR(255) NOT NULL,
     last_name VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
+    pending_reset BOOL NOT NULL DEFAULT True,
     PRIMARY KEY (employee_id)
 );
 
