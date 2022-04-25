@@ -6,9 +6,7 @@ include("../assets/Header/Header.php");
 $Servername = "localhost";
 $ID = $_SESSION["UserID"];
 
-$conn = new mysqli($Servername, $ID, $_SESSION["Password"]);
-$Query = "SELECT email_address, phone_number FROM KennelDB.customers WHERE LPAD(id, 3, \"0\") = ".ltrim($ID, 1);
-$row = $conn -> query($Query) -> fetch_assoc();
+
 
 $Email = $row["email_address"];
 $Phone = $row["phone_number"];
