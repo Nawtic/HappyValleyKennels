@@ -1,15 +1,43 @@
-<!-- Page Credit: Andres Bastidas -->
-
 <?php
-include("../assets/Header/Header.php");
+$page_creator = "Andres Bastidas";
 
-$Servername = "localhost";
-$ID = $_SESSION["UserID"];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  include("con_db.php");
 
+  if (isset($_POST['register'])) {
+    if (strlen($_POST['Name']) >= 1 and strlen($_POST['Email']) >= 1 and strlen($_POST['DogName']) >= 1 and strlen($_POST['Breed']) >= 1 and strlen($_POST['Phone']) >= 1 and strlen($_POST['Address']) >= 1 and strlen($_POST['Gender']) >= 1 and strlen($_POST['Size']) >= 1) {
 
+      $name = trim($_POST['Name']);
+      $email = trim($_POST['Email']);
+      $dogname = trim($_POST['DogName']);
+      $breed = trim($_POST['Breed']);
+      $phone = trim($_POST['Phone']);
+      $address = trim($_POST['Address']);
+      $gender = trim($_POST['Gender']);
+      $size = trim($_POST['Size']);
+      $checkin = date("m/d/y");
+      $checkout = date("m/d/y");
 
-$Email = $row["email_address"];
-$Phone = $row["phone_number"];
+      $consulta = "INSERT INTO scheduling(Name, Email, DogName, Breed, Phone, Address, Gender, Size, CheckIn, CheckOut) VALUES ('$name','$email','$dogname','$breed','$phone','$address','$gender','$size','$checkin', '$checkout')";
+
+      $resultado = mysqli_query($conex, $consulta);
+
+      if ($resultado) {
+        header("location: http://localhost/HappyValleyKennels/Scheduling/Check Out/");
+      } else {
+        include($_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/assets/Header/Header.php");
+
+        echo ("<h3 class=\"bad\">An error has occurred!</h3>");
+      }
+    } else {
+      include($_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/assets/Header/Header.php");
+
+      echo ("<h3 class=\"bad\">Please complete all the fields!</h3>");
+    }
+  }
+} else {
+  include($_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/assets/Header/Header.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -20,87 +48,79 @@ $Phone = $row["phone_number"];
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Schedule Your Visit</title>
-  <link href="styleheader.css" rel="stylesheet" />
   <link href="formstyle.css" rel="stylesheet" />
+  <link href="styleheader.css" rel="stylesheet" />
+
 </head>
 
 <body>
+  <div id="Page_Content">
+    <form method="post" action="index.php">
+      <div class="container">
+        <center>
+          <h1> Schedule Your Visit With Us</h1>
+        </center>
+        <hr>
 
-  <form action="Check Out/checkout.php">
-    <div class="container">
-      <center>
-        <h1> Schedule Your Visit With Us</h1>
-      </center>
-      <hr class="black_line">
-      <label> Owner's Name </label>
-      <input type="text" name="firstname" placeholder="Your Name" size="15" required value=<?php echo("\"".$_SESSION["First Name"]." ".$_SESSION["Last Name"]."\"");?> readonly/>
+        <label> Owner's Name </label>
+        <input type="text" name="Name" placeholder="Your Name" size="50" />
 
-      <label for="email">Email</label>
-      <input type="text" placeholder="Enter Email" name="email" required value=<?php echo("\"".$Email."\"")?>>
+        <label for="email">Email</label>
+        <input type="text" placeholder="Enter Email" name="Email" />
 
-      <label> Dog's Name </label>
-      <input type="text" name="middlename" placeholder="Your Dog Name" size="15" required />
-      <label> Breed of the Dog </label>
-      <input type="text" name="lastname" placeholder="Breed" size="15" required />
+        <label> Dog's Name </label>
+        <input type="text" name="DogName" placeholder="Your Dog Name" size="50" />
 
-      <label>
-        Gender :
-      </label><br>
-      <input type="radio" value="Male" name="gender" checked> Male
-      <input type="radio" value="Female" name="gender"> Female
+        <label> Breed of the Dog </label>
+        <input type="text" name="Breed" placeholder="Breed" size="25" />
 
+        <label>Phone Number : </label>
+        <input type="text" name="Phone" placeholder="phone no." size="10" />
 
+        <label>Current Address : </label>
+        <input type="text" name="Address" placeholder="Your Address" size="100" />
 
-      <label>
-        Size :
-      </label>
-
-      <select>
-        <option value="Course">Small</option>
-        <option value="BCA">Medium</option>
-        <option value="BBA">Big</option>
-        <option value="B.Tech">Extra Big</option>
-
-      </select>
+        <div>
+          <label>
+            Gender :
+          </label><br>
+          <input type="radio" value="Male" name="Gender" checked> Male
+          <input type="radio" value="Female" name="Gender"> Female
+          <div>
+            <label>
+              Size :
+            </label>
+          </div>
+          <input type="text" name="Size" placeholder="Size" size="25" />
+        </div>
 
 
 
-      <label>
-        Phone Number :
-      </label>
-      <input type="text" name="country code" placeholder="Country Code" value="+1" size="2" />
-      <input type="text" name="phone" placeholder="phone no." size="10" required value=<?php echo("\"".$Phone."\"")?>>
-      Current Address :
-      <textarea cols="80" rows="5" placeholder="Current Address" value="address" required>
-      </textarea>
+        <label>
+          Check-In Date :
+        </label>
+        <input type="date" id="dob" />
+        <p></p>
 
-      <label>
-        Check-In Date :
-      </label>
-      <input type="date" id="dob" />
-      <p></p>
+        <label>
+          Check-Out Date :
+        </label>
+        <input type="date" id="dob" />
 
-      <label>
-        Check-Out Date :
-      </label>
-      <input type="date" id="dob" />
+        <script>
+          function viewdate() {
+            var x = document.getElementById("dob").value;
+            document.getElementById("demo").innerHTML = x;
+          }
+        </script>
 
-      <script>
-        function viewdate() {
-          var x = document.getElementById("dob").value;
-          document.getElementById("demo").innerHTML = x;
-        }
-      </script>
-
-      <button type="submit" class="registerbtn">Submit</button>
-
-    </div>
-  </form>
-
+        <hr>
+        <input type="submit" name="register">
+      </div>
+    </form>
+  </div>
 </body>
 
 </html>
 
-<?php
-include("../assets/Footer/Footer.php");
-?>
+<?php include($_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/assets/Footer/Footer.php"); ?>
