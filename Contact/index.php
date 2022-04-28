@@ -50,24 +50,31 @@ include "../assets/Header/Header.php";
                     </form>
                 </div>
                 <div class="contact-right">
-                    <h3>Reach us</h3>
+                    <div>
+                        <h3>Reach Us</h3>
 
-                    <table>
-                        <tr>
-                            <td>Email</td>
-                            <td>kennelcustomersupport@gmail.com</td>
-                        </tr>
-                        <tr>
-                            <td>Phone Number</td>
-                            <td>+1 012 345 6754</td>
-                        </tr>
-                        <tr>
-                            <td>Address</td>
-                            <td> 1 University Dr <br>
-                                Campbellsville University <br>
-                                42718 </td>
-                        </tr>
-                    </table>
+                        <table>
+                            <tr>
+                                <td>Email</td>
+                                <td>kennelcustomersupport@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number</td>
+                                <td>+1 012 345 6754</td>
+                            </tr>
+                            <tr>
+                                <td>Address</td>
+                                <td> 1 University Dr <br>
+                                    Campbellsville University <br>
+                                    42718 </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <hr id="contact-separator">
+                    <div>
+                        <h3>Visit Us</h3>
+                        <a href="Visit">Schedule A Visit</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,5 +84,5 @@ include "../assets/Header/Header.php";
 </html>
 
 <?php
-    include "../assets/Footer/Footer.php";
+include "../assets/Footer/Footer.php";
 ?>
