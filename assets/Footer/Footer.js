@@ -41,6 +41,9 @@ function enter(text) {
         else if (entry[0] == "movingday") {
             document.getElementById("Header_Text").style.transform += "translate(" + entry[1] + "px, " + entry[2] + "px)";
         }
+        else if ((entry[0] + " " + entry[1]) == "dee bug") {
+            window.location.href = "/HappyValleyKennels/assets/debug.php";
+        }
 
         document.getElementById("secret_input").remove();
     }
