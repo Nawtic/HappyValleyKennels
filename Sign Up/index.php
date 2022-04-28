@@ -7,6 +7,8 @@
 </head>
 <body>
 <?php
+    include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
+
     require('../Sign In/db.php');
     // When form submitted, insert values into the database.
     if (isset($_REQUEST['username'])) {
