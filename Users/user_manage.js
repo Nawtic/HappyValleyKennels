@@ -6,6 +6,12 @@ function addUser() {
 function mainMenu() {
     document.getElementById("options_menu").classList.remove("hide");
     document.getElementById("add_menu").classList.add("hide");
+    document.getElementById("edit_menu").classList.add("hide");
+}
+
+function editMenu() {
+    document.getElementById("options_menu").classList.add("hide");
+    document.getElementById("edit_menu").classList.remove("hide");
 }
 
 

@@ -1,0 +1,40 @@
+.center {
+    align-items: center;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    margin: 2%;
+}
+
+.horizontal {
+    display: flex;
+    flex-direction: row;
+}
+
+.names {
+    font-size: x-large;
+}
+
+#Page_Content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#detail_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 50%;
+
+    background-color: var(--blue);
+}
+
+#role_radio {
+    width: 50%;
+}
