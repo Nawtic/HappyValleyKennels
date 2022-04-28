@@ -20,6 +20,7 @@
 <html>
     <head>
         <title>Happy Valley Kennels</title>
+        <link rel="icon" type="image/x-icon" href="/HappyValleyKennels/assets/images/favicon.ico">
 
         <style>
             <?php
