@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php
+    $page_creator = "Isaac Asare";
     include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
 
     require('../Sign In/db.php');
