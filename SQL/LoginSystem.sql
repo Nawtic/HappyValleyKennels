@@ -1,3 +1,5 @@
+-- Script Credit: Isaac Asare --
+
 DROP DATABASE IF EXISTS LoginSystem;
 CREATE DATABASE LoginSystem;
 USE LoginSystem;

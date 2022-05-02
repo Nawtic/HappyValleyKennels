@@ -1,8 +1,90 @@
+/*
+	This file combines all scripts necessary to run the Happy Valley Kennels website
+	Credits for each part of the script is given in comments before that script
+*/
+
+-- Script Credit: Alexa Miller --
+-- START happy_kennel_db.sql --
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `final_resume`
+--
+
+DROP DATABASE IF EXISTS HAPPY_KENNEL;
+CREATE DATABASE HAPPY_KENNEL;
+COMMIT;
+USE HAPPY_KENNEL;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `work_experience`
+--
+
+CREATE TABLE `reports` (
+  `ID` INT AUTO_INCREMENT,
+  `Dog Name (s)` text NOT NULL,
+  `Owner Name (s)` text NOT NULL,
+  `Food Type` text NOT NULL,
+  `Necessary Medical Info` text NOT NULL,
+  `Paid?` text NOT NULL,
+  `Date Start-End` text NOT NULL,
+  `Comments` text NULL,
+  PRIMARY KEY (ID)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `reports`
+--
+
+INSERT INTO `reports` (`ID`, `Dog Name (s)`, `Owner Name (s)`, `Food Type`, `Necessary Medical Info`, `Paid?`,`Date Start-End`,`Comments`) VALUES
+(1, 'Spot', 'Alex', 'Provided', 'Insulin Shots', 'Yes', 'April 20 - April 23', NULL);
+
+
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `reports`
+--
+
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `work_experience`
+--
+/*ALTER TABLE `reports`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;*/
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- END happy_kennel_db.sql --
+
+
+
+
 -- Script Credit: Stephen Erichsen --
+-- START CreateDB2.sql --
 
-DROP DATABASE IF EXISTS happy_kennel;
-
-CREATE DATABASE happy_kennel;
+-- Database creation statements removed due to conflict --
 
 USE happy_kennel;
 
@@ -154,3 +236,98 @@ GRANT SELECT, UPDATE, INSERT ON happy_kennel.employees TO "HR"@"localhost";
 DROP USER IF EXISTS "logincheck"@"localhost";
 CREATE USER "logincheck"@"localhost" IDENTIFIED BY "loginmanage";
 GRANT SELECT, UPDATE ON happy_kennel.employees TO "logincheck"@"localhost";
+
+-- END CreateDB2.sql --
+
+
+
+
+-- Script Credit: Isaac Asare --
+-- START LoginSystem.sql --
+
+DROP DATABASE IF EXISTS LoginSystem;
+CREATE DATABASE LoginSystem;
+USE LoginSystem;
+
+CREATE TABLE IF NOT EXISTS `users` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `username` varchar(50) NOT NULL,
+ `email` varchar(50) NOT NULL,
+ `password` varchar(50) NOT NULL,
+ `create_datetime` datetime NOT NULL,
+ PRIMARY KEY (`id`)
+);
+
+DROP USER IF EXISTS "customercheck"@"localhost";
+CREATE USER "customercheck"@"localhost" IDENTIFIED BY "loginmanage";
+GRANT SELECT, UPDATE, INSERT ON LoginSystem.users TO "customercheck"@"localhost";
+
+-- END LoginSystem.sql --
+
+
+
+
+-- Script Credit: Andres Bastidas --
+-- START registro5.sql --
+
+Drop database if exists registro5;
+Create database registro5;
+
+Use registro5;
+
+Create table scheduling
+(
+	Id		Int(10)		Primary Key 	AUTO_INCREMENT,
+    Name	varchar(50),
+    Email	varchar(50),
+    DogName	varchar(25),
+    Breed	varchar(25),
+    Phone	int(10),
+    Address	varchar(100),
+    Gender	varchar(25),
+    Size	varchar(25),
+    CheckIn	varchar(25),
+    CheckOut varchar(25)
+);
+
+CREATE TABLE checkout (
+    Id INT(10) PRIMARY KEY AUTO_INCREMENT,
+    Name VARCHAR(50),
+    Email VARCHAR(50),
+    Address VARCHAR(100),
+    City VARCHAR(50),
+    State VARCHAR(2),
+    Zip INT(5),
+    Cardname VARCHAR(50),
+    Cardnumber INT(16),
+    Expmonth VARCHAR(25),
+    Expyear INT(4),
+    Cvv INT(3)
+);
+
+DROP USER IF EXISTS "Scheduler"@"localhost";
+CREATE USER "Scheduler"@"localhost" IDENTIFIED BY "Sched";
+GRANT INSERT ON registro5.scheduling TO "Scheduler"@"localhost";
+
+-- END registro5.sql --
+
+
+
+
+-- Script Credit: Mauricio Ernesto Alfaro Aragon --
+-- START registro_db.sql --
+
+DROP DATABASE IF EXISTS registro;
+CREATE DATABASE registro;
+USE registro;
+
+CREATE TABLE datos(
+Id INT(10) PRIMARY KEY AUTO_INCREMENT,
+name VARCHAR (100),
+dog VARCHAR (100),
+email VARCHAR (100),
+concern VARCHAR (300),
+received_date date
+);
+
+-- END registro_db.sql --
