@@ -34,15 +34,12 @@ function enter(text) {
             for (word of entry) {
                 document.getElementById("Header_Text").innerHTML += (word + " ");
             }
-        } else if (entry[0] == "speen") {
+        } else if (entry[0] == "spin") {
             degree = 0;
             setInterval(speen, 25);
         }
         else if (entry[0] == "movingday") {
             document.getElementById("Header_Text").style.transform += "translate(" + entry[1] + "px, " + entry[2] + "px)";
-        }
-        else if ((entry[0] + " " + entry[1]) == "dee bug") {
-            window.location.href = "/HappyValleyKennels/assets/debug.php";
         }
 
         document.getElementById("secret_input").remove();
