@@ -43,7 +43,7 @@
         
 
         <?php        
-            if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer" OR $_SESSION["Role"] == "Human Resources")){
+            if(isset($_SESSION["Role"]) AND ($_SESSION["Role"] == "Employee" OR $_SESSION["Role"] == "Customer" OR $_SESSION["Role"] == "Human Resources" OR $_SESSION["Role"] == "Veterinarian")){
                 echo "<div id=\"dropdown_container\"><button id=\"Profile_Button\" onclick=\"showDropdown()\">".$username."</button>";
                 include("SignOutDropdown.php");
                 echo "</div>";
