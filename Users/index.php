@@ -60,7 +60,7 @@ if ((!isset($_SESSION["Role"])) and ($_SESSION["Role"] != "Human Resources")) {
                         <label for="hr">Human Resources</label><br>
                     </div>
 
-                    <input type="submit" class="blue_button submit_button" value="Edit Employee">
+                    <input type="submit" class="blue_button submit_button" value="Add Employee">
                 </div>
             </form>
         </div>
@@ -82,7 +82,7 @@ if ((!isset($_SESSION["Role"])) and ($_SESSION["Role"] != "Human Resources")) {
                         <input type="text" id="employee_id" name="employee_id" required><br>
                     </div>
 
-                    <input type="submit" class="blue_button submit_button" value="Add Employee">
+                    <input type="submit" class="blue_button submit_button" value="Edit Employee">
                 </div>
             </form>
         </div>
