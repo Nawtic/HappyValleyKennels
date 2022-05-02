@@ -156,6 +156,13 @@ body{
 #dropdown_items a {
     font-size: large;
     text-decoration: none;
+    margin-top: 4%;
+    color: var(--dark_blue);
+}
+
+#dropdown_items a:hover {
+    background-color: var(--dark_blue);
+    color: var(--white_blue);
 }
 
 #dropdown_items button, #Submit_Button{
@@ -172,6 +179,8 @@ body{
 
 .show {
     display: flex !important;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 

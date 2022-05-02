@@ -11,7 +11,6 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="Home.css">
-        <script src="home.js"></script>
     </head>
 
     <body>

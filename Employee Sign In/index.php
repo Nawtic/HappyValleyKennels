@@ -39,7 +39,7 @@
                             $_SESSION["Last Name"] = $queryResult["last_name"];
                             
                             if($queryResult["pending_reset"] == False){
-                                header('Location: SignInSuccess.php');
+                                header('Location: ../Home');
                             } else {
                                 header('Location: Reset.php');
                             }

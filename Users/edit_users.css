@@ -1,3 +1,7 @@
+.hide {
+    display: none;
+}
+
 .center {
     align-items: center;
 }
@@ -37,4 +41,17 @@
 
 #role_radio {
     width: 50%;
+}
+
+#confirmation_button {
+    margin: 1%;
+
+    background-color: var(--dark_blue);
+
+    color: var(--light_blue);
+    font-family: Y14;
+    font-size: x-large;
+
+    border-radius: 10px;
+    border-style: none;
 }
