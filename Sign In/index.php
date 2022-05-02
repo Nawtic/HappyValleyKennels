@@ -7,8 +7,7 @@
 </head>
 <body>
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
-
+    $page_creator = "Isaac Asare";
     require('db.php');
     // session_start();
     // When form submitted, check and create user session.
@@ -23,16 +22,23 @@
         $result = mysqli_query($con, $query) or die(mysql_error());
         $rows = mysqli_num_rows($result);
         if ($rows == 1) {
+            session_start();
             $_SESSION['username'] = $username;
-            // Redirect to user dashboard page
-            header("Location: dashboard.php");
+            $_SESSION["Role"] = "Customer";
+            $_SESSION["User ID"] = 444;
+            $_SESSION["First Name"] = $_SESSION['username'];
+            // Redirect to home
+            header("Location: /HappyValleyKennels/Home");
         } else {
+            include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
             echo "<div class='form'>
                   <h3>Incorrect Username/password.</h3><br/>
-                  <p class='link'>Click here to <a href='/HappyValleyKennels/Sign In/'>Login</a> again.</p>
+                  <!-- <p class='link'>Click here to <a href='/HappyValleyKennels/Sign In/'>Login</a> again.</p> -->
                   </div>";
         }
     } else {
+        include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
+    }
 ?>
     <form class="form" method="post" name="login">
         <h1 class="login-title">Login</h1>
@@ -41,8 +47,5 @@
         <input type="submit" value="Login" name="submit" class="login-button"/>
         <p class="link"><a href="/HappyValleyKennels/Sign Up/">New Registration</a></p>
   </form>
-<?php
-    }
-?>
 </body>
 </html>

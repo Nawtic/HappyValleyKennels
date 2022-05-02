@@ -308,6 +308,7 @@ CREATE TABLE checkout (
 DROP USER IF EXISTS "Scheduler"@"localhost";
 CREATE USER "Scheduler"@"localhost" IDENTIFIED BY "Sched";
 GRANT INSERT ON registro5.scheduling TO "Scheduler"@"localhost";
+GRANT INSERT ON registro5.checkout TO "Scheduler"@"localhost";
 
 -- END registro5.sql --
 

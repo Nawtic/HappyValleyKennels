@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
       $resultado = mysqli_query($conex, $consulta);
       if ($resultado) {
-        include($_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/assets/Header/Header.php");
+        header("location: Confirmation");
         echo("<h3 class=\"ok\">Your information was sent successfully!</h3>");
       } else {
         include($_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/assets/Header/Header.php");
