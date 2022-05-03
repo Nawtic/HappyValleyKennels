@@ -30,6 +30,9 @@ function validate(sender) {
 
                 if (document.getElementById("password").value != document.getElementById("password_reenter").value){
                     document.getElementById("error_text").innerHTML = "Passwords must match";
+                    document.getElementById("submit_button").disabled = true;
+                } else {
+                    document.getElementById("submit_button").removeAttribute("disabled");
                 }
 
             } catch {
