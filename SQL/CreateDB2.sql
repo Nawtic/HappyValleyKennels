@@ -1,5 +1,15 @@
 -- Script Credit: Stephen Erichsen --
 
+/* 
+					**NOTE**
+                    
+	Script does not contain other team member submissions.
+	As per my understanding of current instructions,
+    each team member will submit their own script.
+					
+                    ********
+*/
+
 DROP DATABASE IF EXISTS happy_kennel;
 
 CREATE DATABASE happy_kennel;
@@ -37,7 +47,7 @@ CREATE TABLE owners (
 CREATE TABLE dogs (
 	dog_id int AUTO_INCREMENT NOT NULL,
     owner_id int NOT NULL,
-    name VARCHAR(255),
+    name VARCHAR(255) NOT NULL,
     size VARCHAR(25) NOT NULL,
     PRIMARY KEY (dog_id),
     FOREIGN KEY (owner_id) REFERENCES owners(owner_id)
