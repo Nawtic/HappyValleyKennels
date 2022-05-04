@@ -147,13 +147,19 @@ USE HAPPY_KENNEL;
 
 INSERT INTO owners(first_name, last_name, email_address, password) VALUES ("Bill", "Nye", "science_guy@test.edu", "I<3Sporky");
 
-INSERT INTO dogs(owner_id, name) VALUES (1, "Sporky");
+INSERT INTO dogs(owner_id, name, size) VALUES (1, "Sporky", "Large");
 
 INSERT INTO cages(cage_size) VALUES ("Large");
 
 INSERT INTO employees(role, first_name, last_name, password, pending_reset) VALUES ("Employee", "Bill", "Board", "$2y$10$EU6Me6ejb7P.J1wOoaognO55VHMvt3iSw.gG8izmlCVEZQPzPH75a", False), ("Human Resources", "Laura", "Ipsum", "$2y$10$EU6Me6ejb7P.J1wOoaognO55VHMvt3iSw.gG8izmlCVEZQPzPH75a", False); 
 
 INSERT INTO open_drop_offs(owner_id, dog_id, cage_id, drop_date, retrieve_date) VALUES (1, 1, 1, now(), date_add(now(), INTERVAL 3 DAY));
+
+-- Test Statements --
+
+SELECT * FROM owners JOIN dogs ON owners.owner_id = dogs.owner_id;
+SELECT * FROM employees;
+SELECT * FROM open_drop_offs JOIN dogs ON open_drop_offs.dog_id = dogs.dog_id JOIN owners ON owners.owner_id = dogs.owner_id;
 
 -- Create DB Users --
 
