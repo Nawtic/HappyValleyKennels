@@ -1,3 +1,8 @@
+#Page_Content section{
+    display: flex;
+    justify-content: center;
+}
+
 caption
 {
     font-weight:bold;
