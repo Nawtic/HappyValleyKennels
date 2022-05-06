@@ -1,0 +1,70 @@
+nav button {
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 24px;
+	margin: 4px 2px;
+	cursor: pointer;
+	background-color: #008CBA; /* Blue */
+}
+form button {
+	border: 1px black;
+	color: white;
+	width: 70px;
+	height: 30px;
+	text-align: center;
+	border-radius: 4px;
+	font-size: 15px;
+	margin:20px 20px;
+	cursor: pointer;
+	background-color: #008CBA;
+}
+form button:hover {
+	background-color: lightblue;
+}
+nav {
+	background-color: #008CBA;
+}
+body {
+	justify-content: center;
+}
+
+.div3 {
+	width: 50%;
+}
+
+#div2 {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+#div2 hr {
+	width: 100%;
+}
+
+#Page_Content {
+	justify-content: center;
+	display: flex;
+}
+
+div.fixed {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+#form_content {
+	width: 100%;
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+}
+textarea {
+	resize: none;
+	width: 100%;
+	overflow-wrap: break-word;
+}

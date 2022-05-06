@@ -3,14 +3,82 @@
 	Credits for each part of the script is given in comments before that script
 */
 
-DROP DATABASE IF EXISTS happy_kennel;
-CREATE DATABASE happy_kennel;
+-- Script Credit: John Luke Roberts --
+-- START FAQdatabase.sql --
+
+DROP DATABASE if exists FAQ;
+CREATE DATABASE FAQ;
+USE FAQ;
+CREATE TABLE inquiry (
+	question varchar(250),
+    recency datetime,
+    id int auto_increment primary key
+);
+INSERT INTO inquiry (question, recency)
+VALUES 
+	( 'How do I register my pet for a stay at the kennels?', now()),
+    ( 'Where do I make my account for the website?', now()),
+    ( 'What services will be provided for my pet once I bring them in?', now());
+CREATE TABLE resp (
+	question varchar(100),
+    response varchar(800),
+    id int auto_increment primary key
+);
+INSERT INTO resp (question, response)
+VALUES
+	( 'How do I register my pet for a stay at the kennels?', 'It is very simple to get your own account started. This can be done at our website''s sign-up page. There, you will be asked to register so we can be in contact with you while your dog is under our care! Simply go to our page and enter your email and phone number, and you''re done!'),
+    ( 'What services are provided for My dog?', 'Here at Happy Valley Kennels, your dog''s health and wellbeing are our top priority! We will be sure to provide your pet with all required medical attention it needs, be sure it gets regular play time, and is kept safe during its entire stay! Our Nurses are trained professionals and will make sure your dog recieves its proper perscriptions. Our staff will also be actively overseeing your pet''s activities. Our hope is that your dog will be excited for any visit back to our establishment!');
+
+-- END FAQdatabase.sql --
+
+
+-- Script Credit: Alexa Miller --
+-- START happy_kennel_db --
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+DROP DATABASE IF EXISTS HAPPY_KENNEL;
+CREATE DATABASE HAPPY_KENNEL;
+COMMIT;
+USE HAPPY_KENNEL;
+
+CREATE TABLE `reports` (
+  `ID` INT AUTO_INCREMENT,
+  `Dog Name (s)` text NOT NULL,
+  `Owner Name (s)` text NOT NULL,
+  `Food Type` text NOT NULL,
+  `Necessary Medical Info` text NOT NULL,
+  `Paid?` text NOT NULL,
+  `Date Start-End` text NOT NULL,
+  `Comments` text NULL,
+  PRIMARY KEY (ID)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `reports` (`ID`, `Dog Name (s)`, `Owner Name (s)`, `Food Type`, `Necessary Medical Info`, `Paid?`,`Date Start-End`,`Comments`) VALUES
+(1, 'Spot', 'Alex', 'Provided', 'Insulin Shots', 'Yes', 'April 20 - April 23', NULL);
+
+SELECT * FROM reports;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- END happy_kennel_db.sql --
 
 -- Script Credit: Stephen Erichsen --
 -- START CreateDB2.sql --
 
--- Database creation statements removed due to conflict --
-
+DROP DATABASE IF EXISTS happy_kennel;
+CREATE DATABASE happy_kennel;
 USE happy_kennel;
 
 -- Create a table which holds all employees --
@@ -231,7 +299,7 @@ CREATE TABLE checkout (
 );
 
 INSERT INTO scheduling(Name, Email, DogName, Breed, Phone, Address, Gender, Size, CheckIn, CheckOut) VALUES ("Jane Doe", "jdoe@gmail.com", "Tilly", "Border Collie", "555-4569", "123 Dr", "Female", "Medium", "05/22/22", "05/30/22"),
-("John Doe", "johnD@gmail.com", "Patches", "Dalmation", "555-4569", "123 Dr", "Male", "Medium", "05/25/22", "05/28/22");
+("John Doe", "johnD@gmail.com", "Patches", "Dalmation", "555-4569", "123 Dr", "Male", "Big", "05/25/22", "05/28/22");
 
 DROP USER IF EXISTS "Scheduler"@"localhost";
 CREATE USER "Scheduler"@"localhost" IDENTIFIED BY "Sched";
