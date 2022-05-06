@@ -3,83 +3,8 @@
 	Credits for each part of the script is given in comments before that script
 */
 
--- Script Credit: Alexa Miller --
--- START happy_kennel_db.sql --
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `final_resume`
---
-
-DROP DATABASE IF EXISTS HAPPY_KENNEL;
-CREATE DATABASE HAPPY_KENNEL;
-COMMIT;
-USE HAPPY_KENNEL;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `work_experience`
---
-
-CREATE TABLE `reports` (
-  `ID` INT AUTO_INCREMENT,
-  `Dog Name (s)` text NOT NULL,
-  `Owner Name (s)` text NOT NULL,
-  `Food Type` text NOT NULL,
-  `Necessary Medical Info` text NOT NULL,
-  `Paid?` text NOT NULL,
-  `Date Start-End` text NOT NULL,
-  `Comments` text NULL,
-  PRIMARY KEY (ID)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `reports`
---
-
-INSERT INTO `reports` (`ID`, `Dog Name (s)`, `Owner Name (s)`, `Food Type`, `Necessary Medical Info`, `Paid?`,`Date Start-End`,`Comments`) VALUES
-(1, 'Spot', 'Alex', 'Provided', 'Insulin Shots', 'Yes', 'April 20 - April 23', NULL);
-
-
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `reports`
---
-
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `work_experience`
---
-/*ALTER TABLE `reports`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;COMMIT;*/
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
--- END happy_kennel_db.sql --
-
-
-
+DROP DATABASE IF EXISTS happy_kennel;
+CREATE DATABASE happy_kennel;
 
 -- Script Credit: Stephen Erichsen --
 -- START CreateDB2.sql --
@@ -219,7 +144,7 @@ USE HAPPY_KENNEL;
 
 INSERT INTO owners(first_name, last_name, email_address, password) VALUES ("Bill", "Nye", "science_guy@test.edu", "I<3Sporky");
 
-INSERT INTO dogs(owner_id, name) VALUES (1, "Sporky");
+INSERT INTO dogs(owner_id, name, size) VALUES (1, "Sporky", "Medium");
 
 INSERT INTO cages(cage_size) VALUES ("Large");
 
@@ -282,7 +207,7 @@ Create table scheduling
     Email	varchar(50),
     DogName	varchar(25),
     Breed	varchar(25),
-    Phone	int(10),
+    Phone	varchar(15),
     Address	varchar(100),
     Gender	varchar(25),
     Size	varchar(25),
@@ -305,6 +230,9 @@ CREATE TABLE checkout (
     Cvv INT(3)
 );
 
+INSERT INTO scheduling(Name, Email, DogName, Breed, Phone, Address, Gender, Size, CheckIn, CheckOut) VALUES ("Jane Doe", "jdoe@gmail.com", "Tilly", "Border Collie", "555-4569", "123 Dr", "Female", "Medium", "05/22/22", "05/30/22"),
+("John Doe", "johnD@gmail.com", "Patches", "Dalmation", "555-4569", "123 Dr", "Male", "Medium", "05/25/22", "05/28/22");
+
 DROP USER IF EXISTS "Scheduler"@"localhost";
 CREATE USER "Scheduler"@"localhost" IDENTIFIED BY "Sched";
 GRANT INSERT ON registro5.scheduling TO "Scheduler"@"localhost";
@@ -322,13 +250,32 @@ DROP DATABASE IF EXISTS registro;
 CREATE DATABASE registro;
 USE registro;
 
-CREATE TABLE datos(
-Id INT(10) PRIMARY KEY AUTO_INCREMENT,
-name VARCHAR (100),
-dog VARCHAR (100),
-email VARCHAR (100),
-concern VARCHAR (300),
-received_date date
+CREATE TABLE messages(
+	ID INT (3) PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    phone VARCHAR(11),
+    email VARCHAR(100),
+    subject VARCHAR(100),
+    message VARCHAR(300),
+	received_date date
 );
+
+CREATE TABLE datos (
+    Id INT(10) PRIMARY KEY AUTO_INCREMENT,
+    message_id INT(3),
+    name VARCHAR(100),
+    dog VARCHAR(100),
+    email VARCHAR(100),
+    concern VARCHAR(300),
+    received_date DATE,
+    FOREIGN KEY (message_id)
+        REFERENCES messages (id)
+);
+
+INSERT INTO messages(name, phone, email, subject, message, received_date) VALUES ("Person", "11234567890", "person@email.com", "Dogs", "Message about dogs", now());
+
+SELECT * FROM datos;
+
+SELECT * FROM messages;
 
 -- END registro_db.sql --

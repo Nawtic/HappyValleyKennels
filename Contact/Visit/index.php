@@ -1,6 +1,16 @@
 <?php
 $page_creator = "Mauricio Alfaro";
 include($_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/assets/Header/Header.php");
+
+require("con_db.php");
+
+if(!isset($_SESSION["Message"])){
+
+$statement = "INSERT INTO messages(name, phone, email, subject, message, received_date) VALUES ('".$_POST["Name"]."', '".$_POST["Phone"]."', '".$_POST["Email"]."', '".$_POST["Subject"]."', '". $_POST["Message"] ."', now())";
+
+$_SESSION["Message"] = $statement;
+}
+
 ?>
 
 <!DOCTYPE html>

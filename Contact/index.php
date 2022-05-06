@@ -21,7 +21,7 @@ include "../assets/Header/Header.php";
             <div class="contact-box">
                 <div class="contact-left">
                     <h3>Send Us Your Request</h3>
-                    <form action="send.php" method="POST">
+                    <form action="Visit/index.php" method="POST">
 
                         <div class="input-row">
                             <div class="input-group">
@@ -47,6 +47,7 @@ include "../assets/Header/Header.php";
 
                         <textarea name="Message" cols="70" rows="5" placeholder="Type your message"></textarea>
                         <button id="contact_submit" type="submit">SEND</button>
+
                     </form>
                 </div>
                 <div class="contact-right">
@@ -69,11 +70,6 @@ include "../assets/Header/Header.php";
                                     42718 </td>
                             </tr>
                         </table>
-                    </div>
-                    <hr id="contact-separator">
-                    <div>
-                        <h3>Visit Us</h3>
-                        <a href="Visit">Schedule A Visit</a>
                     </div>
                 </div>
             </div>

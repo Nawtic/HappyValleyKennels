@@ -3,20 +3,9 @@ $page_creator = "Alexa Miller";
 include "../assets/Header/Header.php";
 
 require_once('database.php');
-if (!isset($ID)) {
-    $ID = filter_input(
-        INPUT_GET,
-        'ID',
-        FILTER_VALIDATE_INT
-    );
-    if ($ID == NULL || $ID == FALSE) {
-        $ID = 1;
-    }
-}
-$queryReports = 'SELECT * FROM scheduling
-                  WHERE ID = :ID';
+
+$queryReports = 'SELECT * FROM scheduling';
 $statement1 = $db->prepare($queryReports);
-$statement1->bindValue(':ID', $ID);
 $statement1->execute();
 $reports = $statement1->fetchAll();
 $statement1->closeCursor();
