@@ -1,0 +1,22 @@
+/* Table and Description Styling */
+table, th, td{
+    border: 2px solid black;
+}
+
+table{
+    margin: auto;
+    text-align: center;
+}
+
+h1, p{
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.right {
+    text-align: right;
+}
+.last_paragraph {
+	margin-bottom: 2em;	
+}

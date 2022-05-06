@@ -1,0 +1,13 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(243, 250, 252);
+}
+
+#add_product_form {
+    margin: auto;
+    text-align: center;
+}
+#Page_Content{
+    text-align: center;
+}

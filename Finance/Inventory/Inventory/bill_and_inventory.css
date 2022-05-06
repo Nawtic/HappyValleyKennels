@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(243, 250, 252);
+}
+
+/* Style the page header and its content */
+#Page_Header {
+    background-color: rgb(217, 249, 255);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#Page_Header a{
+    margin: 0;
+
+    text-decoration: none;
+    font-size: 50px;
+    color: rgb(54, 54, 54);
+}
+
+#Nav_Bar {
+    background-color: rgb(118, 178, 255);
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    list-style: none;
+    overflow: hidden;
+}
+
+
+/*Style the nav-bar and its elements*/
+#Nav_Bar li {
+    float: left;
+}
+
+#Nav_Bar li a {
+    display: block;
+
+    font-size: 30px;
+    color: rgb(54, 54, 54);
+    text-decoration: none;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#Nav_Bar li a:hover {
+    background-color: rgb(88, 160, 255);
+}
+
+#Profile_Button a {
+    position: absolute;
+    right: 0;
+
+    background-color: rgb(97, 164, 252);
+
+    font-size: 30px;
+    color: rgb(54, 54, 54);
+    text-decoration: none;
+
+    padding-top: 8px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    border-style: none;
+}
+
+#Profile_Button a:hover {
+    background-color: rgb(33, 93, 172);
+}
+
+.active {
+    background-color: rgb(56, 142, 255);
+}
+
+
+/* Style content area */
+#Page_Content {
+    min-height: 80vh;
+    padding: 10px;
+}
+
+
+/* Footer Styling */
+#Page_Footer{
+    background-color: rgb(255, 255, 255);
+}
+
+#Page_Footer hr {
+    margin-top: 0;
+}
+
+#Footer_Content {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-bottom: 10px;
+}
+
+/* Table and Description Styling */
+table, th, td{
+    border: 2px solid black;
+}
+
+table{
+    margin: auto;
+    text-align: center;
+}
+
+h1, p{
+    text-align: center;
+    margin: auto;
+    padding-bottom: 20px;
+}
+
+.right {
+    text-align: right;
+}
+.last_paragraph {
+	margin-bottom: 2em;	
+}

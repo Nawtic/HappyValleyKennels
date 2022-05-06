@@ -1,5 +1,4 @@
 <?php
-$page_creator = "Ashton Paiz";
 session_start();
 
 if (!isset($_SESSION["UserID"])) {
