@@ -1,6 +1,5 @@
 <?php
- $page_creator = "Ashton Paiz";
-include ".../assets/Header/Header.php";
+$page_creator = "Ashton Paiz";
 
 require_once('database.php');
 
@@ -14,8 +13,8 @@ if ($utility_id != false) {
     $statement = $db->prepare($query);
     $statement->bindValue(':utility_id', $utility_id);
     $success = $statement->execute();
-    $statement->closeCursor();    
+    $statement->closeCursor();
 }
 
 // Display the Product List page
-include('index.php');
+header('location: index.php');

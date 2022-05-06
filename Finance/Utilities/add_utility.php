@@ -1,6 +1,6 @@
 <?php
  $page_creator = "Ashton Paiz";
-include ".../assets/Header/Header.php";
+
 
 // Get the product data
 $utility_id = filter_input(INPUT_POST, 'utlity_id', FILTER_VALIDATE_INT);
@@ -11,6 +11,8 @@ $last_year = filter_input(INPUT_POST, 'last_year', FILTER_VALIDATE_INT);
 // Validate inputs
 if ($type == null || $last_month == null || $last_month == false || $last_year == null || $last_year == false){
     $error = "Invalid product data. Check all fields and try again.";
+    include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
+    include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/Finance/financeHeader.php";
     include('error.php');
 } else {
     require_once('database.php');
@@ -28,6 +30,5 @@ if ($type == null || $last_month == null || $last_month == false || $last_year =
     $statement->closeCursor();
 
     // Display the Product List page
-    include('index.php');
+    header('location: index.php');
 }
-?>

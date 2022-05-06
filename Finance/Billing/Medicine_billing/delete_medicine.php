@@ -1,6 +1,5 @@
 <?php
  $page_creator = "Ashton Paiz";
-include ".../assets/Header/Header.php";
 
 require_once('database.php');
 
@@ -18,4 +17,4 @@ if ($medicine_id != false) {
 }
 
 // Display the Product List page
-include('index.php');
+header('location: index.php');

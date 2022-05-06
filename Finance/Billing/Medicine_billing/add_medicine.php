@@ -1,6 +1,6 @@
 <?php
- $page_creator = "Ashton Paiz";
-include ".../assets/Header/Header.php";
+$page_creator = "Ashton Paiz";
+
 
 // Get the product data
 $medcicine_id = filter_input(INPUT_POST, 'medcicine_id', FILTER_VALIDATE_INT);
@@ -12,6 +12,8 @@ $total = filter_input(INPUT_POST, 'total', FILTER_VALIDATE_INT);
 // Validate inputs
 if ($type == null || $number == null || $number == false || $price == null || $price == false || $total == null || $total == false) {
     $error = "Invalid product data. Check all fields and try again.";
+    include $_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/assets/Header/Header.php";
+    include $_SERVER['DOCUMENT_ROOT'] . "/HappyValleyKennels/Finance/financeHeader.php";
     include('error.php');
 } else {
     require_once('database.php');
@@ -30,7 +32,5 @@ if ($type == null || $number == null || $number == false || $price == null || $p
     $statement->closeCursor();
 
     // Display the Product List page
-    include('index.php');
+    header('location: index.php');
 }
-?>
-

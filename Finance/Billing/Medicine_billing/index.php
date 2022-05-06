@@ -1,11 +1,8 @@
 <?php
- $page_creator = "Ashton Paiz";
-include ".../assets/Header/Header.php";
-//include $_SERVER['DOCUMENT ROOT']."HappyValleyKennels/assets/Header/Header.php
-//include $_SERVER['DOCUMENT ROOT']."HappyValleyKennels/assets/Finance/financeHeader.php
+$page_creator = "Ashton Paiz";
+include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
+include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/Finance/financeHeader.php";
 
-//if(!isset($_SESSION["ROLE"]) AND $_SESSION["ROLE"] != "Employee"){
-// header('Location: /HappyValleyKennels/Assets/Error/Access Denied');
 
 require_once('database.php');
 
@@ -40,19 +37,8 @@ $statement->closeCursor();
 
 <!-- the body section -->
 <body>
-    <div id="Page_Header">
-            <a href="../Home">Happy Valley Kennels</a>
-        </div>
-
-        <ul id="Nav_Bar">
-            <li><a href="../Home">Home</a></li>
-            <li hidden><a href="../About">About</a></li>
-            <li hidden><a href="../FAQ">FAQ</a></li>
-            <li hidden><a href="../Contact">Contact</a></li>
-            <li id="Profile_Button"><a href="../Profile">Profile</a></li>
-        </ul>
-    
-    <h1>medicine Billing</h1>
+        
+    <h1>Medicine Billing</h1>
     <section>
         <!-- display a table of the inventory -->
         <table>

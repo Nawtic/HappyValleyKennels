@@ -1,6 +1,7 @@
 <?php
- $page_creator = "Ashton Paiz";
-include ".../assets/Header/Header.php";
+$page_creator = "Ashton Paiz";
+include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
+include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/Finance/financeHeader.php";
 
 require('database.php');
 $query = 'SELECT *

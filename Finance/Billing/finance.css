@@ -1,0 +1,20 @@
+#Page_Content a {
+    font-size: xx-large;
+    text-decoration: none;
+    background-color: var(--dark_blue);
+    color: var(--white_blue);
+    margin: 1%;
+    padding: 1%;
+    border-color: var(--dark_blue);
+    border-style: solid;
+    border-radius: 7px;
+}
+
+#Page_Content a:hover {
+    background-color: var(--white_blue);
+    color: var(--dark_blue);
+}
+
+#Page_Content {
+    padding: 1%;
+}

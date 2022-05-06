@@ -1,87 +1,70 @@
-<!-- Page Credit: Ashton Paiz -->
-
 <?php
-    include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
-    include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/Finance/financeHeader.php";
-?>
+ $page_creator = "Ashton Paiz";
 
+include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Header/Header.php";
+include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/Finance/financeHeader.php";
+
+
+require_once('database.php');
+
+// Get consumable ID
+if (!isset($consumable_id)) {
+    $consumable_id = filter_input(INPUT_GET, 'consumable_id', 
+            FILTER_VALIDATE_INT);
+    if ($consumable_id == NULL || $consumable_id == FALSE) {
+        $consumable_id = 1;
+    }
+}
+
+// Get name for selected consumable
+
+// Get all consumables
+$query = 'SELECT * FROM inventory
+                       ORDER BY consumable_id';
+$statement = $db->prepare($query);
+$statement->execute();
+$inventory = $statement->fetchAll();
+$statement->closeCursor();
+
+?>
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <title>Happy Valley Kennels</title>
-        <link rel="stylesheet" type="text/css" href="skeleton.css">
-    </head>
-    <body>
 
-        <!-- Content of this div should be unique to each page -->
-        <div id="Page_Content">
-            <p id="foodbill_table_description">Listed below is a table of the dog food bought in the last month.</p>
-            <table>
-                <tr>
-                    <th>Company</th>
-                    <th>Number of Bags</th>
-                    <th>Price per Bag</th>
-                    <th>Total Cost</th>
-                    <th>Type</th>
-                    <th>Specialty</th>
-                    <th>Reliability(1-5)</th>
-                </tr>  
-                <tr>
-                    <td>ABC</td>
-                    <td>20</td>
-                    <td>$25</td>  
-                    <td>$500</td>
-                    <td>Dry</td>
-                    <td>None</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>DEF</td>
-                    <td>25</td>
-                    <td>$22</td>  
-                    <td>$550</td>
-                    <td>Dry</td>
-                    <td>None</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>GHI</td>
-                    <td>18</td>
-                    <td>$32</td>  
-                    <td>$576</td>
-                    <td>Dry</td>
-                    <td>Vitamin</td>
-                    <td>3</td>
-                </tr>
-            </table>
-            
-            <p id="medicinebill_table_description">Listed below is a table of the medicine bought in the last month.</p>
-            <table>
-                <tr>
-                    <th>Type</th>
-                    <th>Number of</th>
-                    <th>Price per</th>
-                    <th>Total Cost</th>
-                </tr>  
-                <tr>
-                    <td>Insulin</td>
-                    <td>10 containers</td>
-                    <td>$100</td>  
-                    <td>$1000</td>
-                </tr>
-                <tr>
-                    <td>Trilostane</td>
-                    <td>8 containers</td>
-                    <td>$75</td>  
-                    <td>$600</td>
-                </tr>
-            </table>
-        </div>
+<!-- the head section -->
+<head>
+    <title>Happy Valley Kennels</title>
+    <link rel="stylesheet" type="text/css" href="bill_and_inventory.css" />
+</head>
 
-    </body>
+<!-- the body section -->
+<body>
+    <h1>Inventory</h1>
+    <section>
+        <!-- display a table of the inventory -->
+        <table>
+            <tr>
+                <th>Consumable</th>
+                <th>Amount In Stock</th>
+                <th>Amount Ordered</th>
+                <th>Reason</th>
+                <th>&nbsp;</th>
+            </tr>
+
+            <?php foreach ($inventory as $consumable) : ?>
+            <tr>
+                <td><?php echo $consumable['consumable_name']; ?></td>
+                <td><?php echo $consumable['amount_in_stock']; ?></td>
+                <td><?php echo $consumable['amount_ordered']; ?></td>
+                <td><?php echo $consumable['reason']; ?></td>
+                <td><form action="delete_consumable.php" method="post">
+                    <input type="hidden" name="consumable_id"
+                           value="<?php echo $consumable['consumable_id'];?>">
+                    <input type="submit" value="Delete">
+                </form></td>
+            </tr>
+            <?php endforeach; ?>
+        </table>
+        <p><a href="add_consumable_form.php">Add Item to Inventory</a></p>
+    </section>
+</body>
 </html>
-
-<?php
-    include $_SERVER['DOCUMENT_ROOT']."/HappyValleyKennels/assets/Footer/Footer.php";
-?>
