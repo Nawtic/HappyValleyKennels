@@ -77,8 +77,6 @@ SELECT * FROM reports;
 -- Script Credit: Stephen Erichsen --
 -- START CreateDB2.sql --
 
-DROP DATABASE IF EXISTS happy_kennel;
-CREATE DATABASE happy_kennel;
 USE happy_kennel;
 
 -- Create a table which holds all employees --
